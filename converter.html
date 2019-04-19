@@ -1,0 +1,548 @@
+
+<HTML>
+
+<HEAD>
+  <TITLE>The Versatile Unit Converter</TITLE>
+  <META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <META NAME="Author" CONTENT="Christophe Berthod">
+  <META NAME="Keywords" CONTENT="unit,units,conversion,converter,javascript">
+  <META NAME="Description" CONTENT="With this unit converter, you can mix the units as you like!">
+  <LINK REL="stylesheet" TYPE="text/css" HREF="vuc.css">
+
+  <SCRIPT LANGUAGE="JavaScript" SRC="vuc-1.62.js"></SCRIPT>
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#333333" onLoad="getCookie();Event(document.main,0);" onClick="Validate(document.main,'Click')">
+
+<FORM name="main">
+
+<TABLE BORDER=0 CELLPADDING=4 CELLSPACING=1 WIDTH="100%" HEIGHT="250" BGCOLOR="#FFFF99">
+  <TR>
+    <TD ALIGN=CENTER>
+      <IMG SRC="gifs/logo.gif">
+    </TD>
+    <TD class="small" ALIGN=RIGHT COLSPAN=2>
+      <A class="sb" HREF="converter.html#null" tabindex=0 onClick="winopen('history.html','history',300,100,600,300,',menubar=no')" onMouseOver="window.status='';message(2)" onMouseOut="message(0)">
+      <!-- -->
+      Version 1.62
+<!--      <IMG SRC="gifs/new.gif" BORDER=0 ALIGN=CENTER> --!>
+      <!-- -->
+      </A>&nbsp;&nbsp;<A class="sb" style="font-size: 8pt;" HREF="http://mafalda.unige.ch/vuc/widget.html" tabindex=0>(Mac OS X users click here)</A>&nbsp;
+      &nbsp;-&nbsp;&nbsp;Last modification:&nbsp;
+      <!-- -->
+	  November 2, 2016
+      <!-- -->
+      &nbsp;-&nbsp;
+      <A class="sb" HREF="http://dqmp.unige.ch/giamarchi/christophe-berthod/" tabindex=0 onMouseOver="message(0);document.main.pic.src=happy.src;escape=true" onMouseOut="document.main.pic.src=inert.src;escape=false">
+      C. Berthod</A>&nbsp;
+    </TD>
+  </TR>
+  <TR>
+    <TD MIN-WIDTH="28%" ALIGN=CENTER VALIGN=TOP BGCOLOR="#6699FF">
+      <A class="field" HREF="converter.html#null" tabindex=0 onClick="winopen('help.html#number','sidewindow',0,0,800,screen.height-100,',menubar=yes,toolbar=yes')" onMouseOver="window.status='';message(34)" onMouseOut="message(0)">
+      Number to convert</A><BR>
+      <INPUT class="courier" NAME="ValueIn" SIZE="25" tabindex=1 onFocus="Event(document.main,15);in_ValueIn=true" onMouseOut="if(in_ValueIn){in_ValueIn=false;check_ValueIn=true}" onBlur="if(in_ValueIn){in_ValueIn=false;check_ValueIn=true}">
+    </TD>
+    <TD ALIGN=CENTER VALIGN=TOP BGCOLOR="#6699FF">
+      <A class="field" HREF="converter.html#null" tabindex=0 onClick="winopen('help.html#from','sidewindow',0,0,800,screen.height-100,',menubar=yes,toolbar=yes')" onMouseOver="window.status='';message(35)" onMouseOut="message(0)">
+      Unit to convert from</A><BR>
+      <INPUT class="courier" NAME="UnitIn" SIZE="45" tabindex=2 onFocus="Event(document.main,15);in_UnitIn=true" onMouseOut="if(in_UnitIn){in_UnitIn=false;check_UnitIn=true}" onBlur="if(in_UnitIn){in_UnitIn=false;check_UnitIn=true}" id="unitfrom_id" value="">
+      <br>
+      <I class="field">
+      Units you already use:
+	  <SELECT NAME="Units to convert from" tabindex=0 onChange="pasteUnit(this);" onMouseOver="escape=true" onMouseOut="escape=false">
+	  <OPTION>Units to convert from
+	  <OPTION>-------------
+	  <OPTION id="display" value="01"></OPTION>
+	  <OPTION id="display1" value="02"> </OPTION>
+	  <OPTION id="display2" value="03"> </OPTION>
+	  <OPTION id="display3" value="04"> </OPTION>
+	  <OPTION id="display4" value="05"> </OPTION>
+	  <OPTION id="display5" value="06"> </OPTION>
+	  <OPTION id="display6" value="07"> </OPTION>
+	  <OPTION id="display7" value="08"> </OPTION>
+      <OPTION id="display8" value="09"> </OPTION>
+	  <OPTION id="display9" value="10"> </OPTION>
+	  </SELECT></I>
+    </TD>
+    <TD WIDTH="25%" class="srib" ALIGN=CENTER VALIGN=TOP>
+      Dimension<BR>
+      <TABLE class="dimension" onDblClick="Event(document.main,3)"><TR>
+      <TD class="dimension" ID="DimIn"></TD></TR></TABLE>
+    </TD>
+  </TR>
+  <TR>
+    <TD ALIGN=CENTER VALIGN=TOP BGCOLOR="#CC0000">
+      <A class="field1" HREF="converter.html#null" tabindex=0 onClick="winopen('help.html#result','sidewindow',0,0,800,screen.height-100,',menubar=yes,toolbar=yes')" onMouseOver="window.status=''">
+      Converted number</A><BR>
+      <TABLE class="number" onDblClick="Event(document.main,4)"><TR>
+      <TD class="number" ID="ValueOut"></TD></TR></TABLE>
+      <SELECT NAME="Notation" tabindex=0 onChange="Event(document.main,5)" onMouseOver="escape=true" onMouseOut="escape=false">
+        <OPTION SELECTED>Automatic<OPTION>Scientific<OPTION>Decimal<OPTION>Engineering
+      </SELECT>
+      <SELECT NAME="Digits" tabindex=0 onChange="Event(document.main,6)" onMouseOver="escape=true" onMouseOut="escape=false">
+        <OPTION>1<OPTION>2<OPTION>3<OPTION>4<OPTION SELECTED>5<OPTION>6
+        <OPTION>7<OPTION>8<OPTION>9<OPTION>10<OPTION>11<OPTION>12
+      </SELECT>
+      <TEXT style="font-size:8pt;color:#FFFF00">&nbsp;Separator</TEXT>
+      <INPUT NAME="Separator_US" TYPE=CHECKBOX CHECKED="checked" tabindex=0 onClick="Event(document.main,17)"><TEXT style="font-size:14pt;color:#FFFF00">'</TEXT>
+      <INPUT NAME="Separator_UK" TYPE=CHECKBOX tabindex=0 onClick="Event(document.main,18)"><TEXT style="font-size:14pt;color:#FFFF00">,</TEXT>
+    </TD>
+    <TD ALIGN=CENTER VALIGN=TOP BGCOLOR="#6699FF">
+      <A class="field" HREF="converter.html#null" tabindex=0 onClick="winopen('help.html#to','sidewindow',0,0,800,screen.height-100,',menubar=yes,toolbar=yes')" onMouseOver="window.status='';message(36)" onMouseOut="message(0)">
+      Unit to convert to</A><BR>
+      <INPUT class="courier" NAME="UnitOut" SIZE="45" tabindex=3 onFocus="Event(document.main,15);in_UnitOut=true" onMouseOut="if(in_UnitOut){in_UnitOut=false;check_UnitOut=true}" onBlur="if(in_UnitOut){in_UnitOut=false;check_UnitOut=true}"><BR>
+      <I class="field">
+      System
+      <B><SELECT NAME="Systems" tabindex=4 onChange="Event(document.main,8)" onMouseOver="escape=true" onMouseOut="escape=false">
+        <OPTION SELECTED>User<OPTION>International<OPTION>CGS<OPTION>Atomic units
+        <OPTION>Relativistic<OPTION>Planck<OPTION>Angstrom-eV
+      </SELECT></B></I>
+    </TD>
+    <TD class="srib" ALIGN=CENTER VALIGN=TOP>
+      Dimension<BR>
+      <TABLE class="dimension" onDblClick="Event(document.main,9)"><TR>
+      <TD class="dimension" ID="DimOut"></TD></TR></TABLE>
+    </TD>
+  </TR>
+  <TR>
+    <TD ALIGN=CENTER>
+      <INPUT class="buttonr" NAME="clear" TYPE=BUTTON VALUE="&nbsp;&nbsp;Clear&nbsp;&nbsp;" tabindex=0 onClick="Event(document.main,10)" onMouseOver="escape=true" onMouseOut="escape=false">&nbsp;&nbsp;
+      <B><INPUT class="buttonr" NAME="adapt" TYPE=BUTTON VALUE="&nbsp;&nbsp;Adapt&nbsp;&nbsp;" tabindex=0 onClick="Event(document.main,11)"></B>&nbsp;&nbsp;
+      <B><INPUT class="buttonr" NAME="convert" TYPE=BUTTON VALUE="&nbsp;Convert&nbsp;" tabindex=5 onClick="setCookie();Event(document.main,12);"></B>
+    </TD>
+    <TD ALIGN=CENTER COLSPAN=2 BGCOLOR="#6699FF">
+      <A class="field" HREF="converter.html#null" tabindex=0 onClick="winopen('help.html#molar','sidewindow',0,0,800,screen.height-100,',menubar=yes,toolbar=yes')" onMouseOver="window.status=''">
+      Molar volume (l/mol)</A>
+      <INPUT NAME="Vmol" VALUE="22.4141" SIZE="12%" tabindex=0 onFocus="Event(document.main,15);in_Vmol=true" onMouseOut="if(in_Vmol){in_Vmol=false;check_Vmol=true}" onBlur="if(in_Vmol){in_Vmol=false;check_Vmol=true}">&nbsp;&nbsp;
+      <A class="field" HREF="converter.html#null" tabindex=0 onClick="winopen('help.html#molar','sidewindow',0,0,800,screen.height-100,',menubar=yes,toolbar=yes')" onMouseOver="window.status=''">
+      Molar mass (g/mol)</A>
+      <INPUT NAME="Mmol" VALUE="1" SIZE="12%" tabindex=0 onFocus="Event(document.main,15);in_Mmol=true" onMouseOut="if(in_Mmol){in_Mmol=false;check_Mmol=true}" onBlur="if(in_Mmol){in_Mmol=false;check_Mmol=true}">
+    </TD>
+  </TR>
+</TABLE>
+
+<TABLE BORDER=0 CELLPADDING=1 CELLSPACING=1 HEIGHT="180" WIDTH="100%" BGCOLOR="#FFFFFF">
+<TR>
+<TD ALIGN=CENTER>
+<A class="field2" HREF="converter.html#null" tabindex=0 onClick="winopen('help.html#symbols','sidewindow',0,0,800,screen.height-100,',menubar=yes,toolbar=yes')" onMouseOver="window.status='';message(37)" onMouseOut="message(0)">
+Symbols of the units</A></TD>
+<TD ALIGN=CENTER>
+<I class="help"><SELECT NAME="Angle" tabindex=0 onChange="Infos(document.main.Angle)" onMouseOver="escape=true" onMouseOut="escape=false">
+<OPTION>Angle
+<OPTION>-------------
+<OPTION>arcmin
+<OPTION>arcsec
+<OPTION>deg
+<OPTION>grad
+<OPTION>rad
+<OPTION>-------------
+<OPTION>sterad
+</SELECT></I>
+</TD>
+<TD ALIGN=CENTER>
+<I class="help"><SELECT NAME="Area" tabindex=0 onChange="Infos(document.main.Area)" onMouseOver="escape=true" onMouseOut="escape=false">
+<OPTION>Area
+<OPTION>-------------
+<OPTION>acre
+<OPTION>are
+<OPTION>b
+<OPTION>sigmae
+</SELECT></I>
+</TD>
+<TD ALIGN=CENTER>
+<I class="help"><SELECT NAME="Charge" tabindex=0 onChange="Infos(document.main.Charge)" onMouseOver="escape=true" onMouseOut="escape=false">
+<OPTION>Charge
+<OPTION>-------------
+<OPTION>C
+<OPTION>Fr
+<OPTION>q
+<OPTION>-------------
+<OPTION>Fd
+</SELECT></I>
+</TD>
+<TD ALIGN=CENTER>
+<I class="help"><SELECT NAME="Current" tabindex=0 onChange="Infos(document.main.Current)" onMouseOver="escape=true" onMouseOut="escape=false">
+<OPTION>Current
+<OPTION>-------------
+<OPTION>A
+<OPTION>Bi
+<OPTION>Gi
+</SELECT></I>
+</TD>
+</TR>
+<TR>
+<TD ALIGN=CENTER>
+<I class="help"><SELECT NAME="Energy" tabindex=0 onChange="Infos(document.main.Energy)" onMouseOver="escape=true" onMouseOut="escape=false">
+<OPTION>Energy
+<OPTION>-------------
+<OPTION>BTU
+<OPTION>cal
+<OPTION>cal15
+<OPTION>calth
+<OPTION>erg
+<OPTION>eV
+<OPTION>Hr
+<OPTION>J
+<OPTION>quad
+<OPTION>Ry
+<OPTION>th
+<OPTION>Wh
+</SELECT></I>
+</TD>
+<TD ALIGN=CENTER>
+<I class="help"><SELECT NAME="Force" tabindex=0 onChange="Infos(document.main.Force)" onMouseOver="escape=true" onMouseOut="escape=false">
+<OPTION>Force
+<OPTION>-------------
+<OPTION>dyn
+<OPTION>kgf
+<OPTION>lbf
+<OPTION>N
+</SELECT></I>
+</TD>
+<TD ALIGN=CENTER>
+<I class="help"><SELECT NAME="Frequency" tabindex=0 onChange="Infos(document.main.Frequency)" onMouseOver="escape=true" onMouseOut="escape=false">
+<OPTION>Frequency
+<OPTION>-------------
+<OPTION>bps
+<OPTION>Bq
+<OPTION>Ci
+<OPTION>dpm
+<OPTION>Hz
+<OPTION>Ru
+</SELECT></I>
+</TD>
+<TD ALIGN=CENTER>
+<I class="help"><SELECT NAME="Length" tabindex=0 onChange="Infos(document.main.Length)" onMouseOver="escape=true" onMouseOut="escape=false">
+<OPTION>Length
+<OPTION>-------------
+<OPTION>a0
+<OPTION>Am
+<OPTION>AU
+<OPTION>Fm
+<OPTION>ft
+<OPTION>fth
+<OPTION>fur
+<OPTION>in
+<OPTION>lambdaCe
+<OPTION>lambdaCmu
+<OPTION>lambdaCn
+<OPTION>lambdaCp
+<OPTION>lP
+<OPTION>ly
+<OPTION>m
+<OPTION>mi
+<OPTION>micron
+<OPTION>nmi
+<OPTION>pc
+<OPTION>re
+<OPTION>yd
+</SELECT></I>
+</TD>
+<TD ALIGN=CENTER>
+<I class="help"><SELECT NAME="Light" tabindex=0 onChange="Infos(document.main.Light)" onMouseOver="escape=true" onMouseOut="escape=false">
+<OPTION>Light
+<OPTION>-------------
+<OPTION>cd
+<OPTION>lm
+<OPTION>-------------
+<OPTION>fc
+<OPTION>lx
+<OPTION>ph
+</SELECT></I>
+</TD>
+</TR>
+<TR>
+<TD ALIGN=CENTER>
+<I class="help"><SELECT NAME="Mass" tabindex=0 onChange="Infos(document.main.Mass)" onMouseOver="escape=true" onMouseOut="escape=false">
+<OPTION>Mass
+<OPTION>-------------
+<OPTION>ct
+<OPTION>fir
+<OPTION>g
+<OPTION>gr
+<OPTION>kg
+<OPTION>lb
+<OPTION>me
+<OPTION>mmu
+<OPTION>mn
+<OPTION>mp
+<OPTION>mP
+<OPTION>oz
+<OPTION>slug
+<OPTION>st
+<OPTION>Sun
+<OPTION>t
+<OPTION>t.long
+<OPTION>t.short
+<OPTION>tlb
+<OPTION>toz
+<OPTION>u
+<OPTION>-------------
+<OPTION>Mmol
+</SELECT></I>
+</TD>
+</TD>
+<TD ALIGN=CENTER>
+<I class="help"><SELECT NAME="Power" tabindex=0 onChange="Infos(document.main.Power)" onMouseOver="escape=true" onMouseOut="escape=false">
+<OPTION>Power
+<OPTION>-------------
+<OPTION>CV
+<OPTION>hp
+<OPTION>W
+</SELECT></I>
+</TD>
+<TD ALIGN=CENTER>
+<I class="help"><SELECT NAME="Pressure" tabindex=0 onChange="Infos(document.main.Pressure)" onMouseOver="escape=true" onMouseOut="escape=false">
+<OPTION>Pressure
+<OPTION>-------------
+<OPTION>atm
+<OPTION>bar
+<OPTION>inHg
+<OPTION>mmHg
+<OPTION>Pa
+<OPTION>psi
+<OPTION>Torr
+</SELECT></I>
+</TD>
+<TD ALIGN=CENTER>
+<I class="help"><SELECT NAME="Temperature" tabindex=0 onChange="Infos(document.main.Temperature)" onMouseOver="escape=true" onMouseOut="escape=false">
+<OPTION>Temperature
+<OPTION>-------------
+<OPTION>K
+<OPTION>oR
+<OPTION>oC
+<OPTION>oF
+<OPTION>T_P
+</SELECT></I>
+</TD>
+<TD ALIGN=CENTER>
+<I class="help"><SELECT NAME="Time" tabindex=0 onChange="Infos(document.main.Time)" onMouseOver="escape=true" onMouseOut="escape=false">
+<OPTION>Time
+<OPTION>-------------
+<OPTION>day
+<OPTION>for
+<OPTION>hr
+<OPTION>min
+<OPTION>month
+<OPTION>s
+<OPTION>s.year
+<OPTION>tP
+<OPTION>week
+<OPTION>year
+</SELECT></I>
+</TD>
+</TR>
+<TR>
+<TD ALIGN=CENTER>
+<I class="help"><SELECT NAME="Velocity" tabindex=0 onChange="Infos(document.main.Velocity)" onMouseOver="escape=true" onMouseOut="escape=false">
+<OPTION>Velocity
+<OPTION>-------------
+<OPTION>c
+<OPTION>kn
+<OPTION>kph
+<OPTION>M
+<OPTION>mph
+</SELECT></I>
+</TD>
+<TD ALIGN=CENTER>
+<I class="help"><SELECT NAME="Volume" tabindex=0 onChange="Infos(document.main.Volume)" onMouseOver="escape=true" onMouseOut="escape=false">
+<OPTION>Volume
+<OPTION>-------------
+<OPTION>bbl
+<OPTION>cup
+<OPTION>l
+<OPTION>UKfloz
+<OPTION>UKgl
+<OPTION>UKpt
+<OPTION>UKqt
+<OPTION>USfloz
+<OPTION>USgl
+<OPTION>USpt
+<OPTION>USqt
+<OPTION>-------------
+<OPTION>Vmol
+</SELECT></I>
+</TD>
+<TD ALIGN=CENTER>
+<I class="help"><SELECT NAME="Physics" tabindex=0 onChange="Infos(document.main.Physics)" onMouseOver="escape=true" onMouseOut="escape=false">
+<OPTION>Physics
+<OPTION>-------------
+<OPTION>e2
+<OPTION>eps0
+<OPTION>gN
+<OPTION>GN
+<OPTION>h
+<OPTION>hbar
+<OPTION>k
+<OPTION>mu0
+<OPTION>muB
+<OPTION>mue
+<OPTION>mumu
+<OPTION>mun
+<OPTION>muN
+<OPTION>mup
+<OPTION>n0
+<OPTION>Na
+<OPTION>phi0
+<OPTION>R
+<OPTION>RH
+<OPTION>Rinf
+<OPTION>sigma
+</SELECT></I>
+</TD>
+<TD ALIGN=CENTER>
+<I class="help"><SELECT NAME="Electricity" tabindex=0 onChange="Infos(document.main.Electricity)" onMouseOver="escape=true" onMouseOut="escape=false">
+<OPTION>Electricity
+<OPTION>-------------
+<OPTION>D
+<OPTION>F
+<OPTION>H
+<OPTION>Ohm
+<OPTION>RH
+<OPTION>S
+<OPTION>V
+</SELECT></I>
+</TD>
+<TD ALIGN=CENTER>
+<I class="help"><SELECT NAME="Magnetism" tabindex=0 onChange="Infos(document.main.Magnetism)" onMouseOver="escape=true" onMouseOut="escape=false">
+<OPTION>Magnetism
+<OPTION>-------------
+<OPTION>G
+<OPTION>muB
+<OPTION>muN
+<OPTION>Mx
+<OPTION>Oe
+<OPTION>phi0
+<OPTION>T
+<OPTION>Wb
+</SELECT></I>
+</TD>
+</TR>
+<TR>
+<TD ALIGN=CENTER>
+<I class="help"><SELECT NAME="Radioactivity" tabindex=0 onChange="Infos(document.main.Radioactivity)" onMouseOver="escape=true" onMouseOut="escape=false">
+<OPTION>Radioactivity
+<OPTION>-------------
+<OPTION>Bq
+<OPTION>Ci
+<OPTION>dpm
+<OPTION>Gy
+<OPTION>rd
+<OPTION>Ro
+<OPTION>Ru
+</SELECT></I>
+</TD>
+<TD ALIGN=CENTER>
+<I class="help"><SELECT NAME="Misc" tabindex=0 onChange="Infos(document.main.Misc)" onMouseOver="escape=true" onMouseOut="escape=false">
+<OPTION>Misc
+<OPTION>-------------
+<OPTION>d
+<OPTION>Jy
+<OPTION>kat
+<OPTION>kpl
+<OPTION>Ly
+<OPTION>mol
+<OPTION>mpg
+<OPTION>P
+<OPTION>sccs
+<OPTION>sccm
+<OPTION>St
+</SELECT></I>
+</TD>
+<TD ALIGN=CENTER>
+<I class="help"><SELECT NAME="Numbers" tabindex=0 onChange="Infos(document.main.Numbers)" onMouseOver="escape=true" onMouseOut="escape=false">
+<OPTION>Pure Numbers
+<OPTION>-------------
+<OPTION>%
+<OPTION>alpha
+<OPTION>bit
+<OPTION>byte
+<OPTION>ge
+<OPTION>gmu
+<OPTION>gn
+<OPTION>gp
+<OPTION>ppb
+<OPTION>ppm
+</SELECT></I>
+</TD>
+<TD ALIGN=CENTER>
+<INPUT class="button" TYPE=BUTTON VALUE="&nbsp;&nbsp;By Name&nbsp;&nbsp;" tabindex=0 onClick='winopen("units_name.html","name",screen.width-350,0,250,screen.height-100,",menubar=0")'>
+<INPUT class="button" TYPE=BUTTON VALUE="&nbsp;By Symbol&nbsp;" tabindex=0 onClick='winopen("units_symb.html","symbol",screen.width-350,0,250,screen.height-100,",menubar=0")'> 
+</TD>
+<TD ALIGN=CENTER>
+<I class="help"><SELECT NAME="Prefixes" tabindex=0 onChange="Prefixes.options[0].selected=true" onMouseOver="escape=true" onMouseOut="escape=false">
+<OPTION>Prefixes
+<OPTION>Usage: [prefix]unit
+<OPTION>-------------
+<OPTION>y : 10^-24 - yocto
+<OPTION>z : 10^-21 - zepto
+<OPTION>a : 10^-18 - atto
+<OPTION>f : 10^-15 - femto
+<OPTION>p : 10^-12 - pico
+<OPTION>n : 10^-09 - nano
+<OPTION>mu: 10^-06 - micro
+<OPTION>m : 10^-03 - milli
+<OPTION>c : 10^-02 - centi
+<OPTION>d : 10^-01 - deci
+<OPTION>da: 10^+01 - deca
+<OPTION>h : 10^+02 - hecto
+<OPTION>k : 10^+03 - kilo
+<OPTION>M : 10^+06 - mega
+<OPTION>G : 10^+09 - giga
+<OPTION>T : 10^+12 - tera
+<OPTION>P : 10^+15 - peta
+<OPTION>E : 10^+18 - exa
+<OPTION>Z : 10^+21 - zetta
+<OPTION>Y : 10^+24 - yotta
+<OPTION>-------------
+<OPTION>Ki : 2^10 - kibi
+<OPTION>Mi : 2^20 - mebi
+<OPTION>Gi : 2^30 - gibi
+<OPTION>Ti : 2^40 - tebi
+<OPTION>Pi : 2^50 - pebi
+<OPTION>Ei : 2^60 - exbi
+<OPTION>Zi : 2^70 - zebi
+<OPTION>Yi : 2^80 - yobi
+</SELECT></I>
+</TD>
+</TR></TABLE>
+
+<TABLE class="message"><TR>
+<TD WIDTH="5%" ALIGN=RIGHT VALIGN=TOP>
+  <IMG SRC="gifs/happy.gif" NAME="pic" BORDER=0 ALIGN=CENTER>
+</TD>
+<TD class="message" onDblClick="Event(document.main,16)">
+<DIV class="message" ID="Mess">&nbsp;</DIV></TD>
+</TR></TABLE>
+
+<TABLE BORDER=0 CELLPADDING=1 CELLSPACING=1 WIDTH="100%" BGCOLOR=#FFFF99>
+  <TR VALIGN=CENTER>
+  <TD ALIGN=LEFT>
+    <TABLE BORDER=0 WIDTH=500>
+      <TR VALIGN=CENTER>
+      <TD><A class="menu1" HREF="index.html" tabindex=0 onMouseOver="if(erase_infos){window.status='';message(3);escape=true}" onMouseOut="if(erase_infos){message(0)};escape=false">Entry</A></TD>
+      <TD class="selected">Converter</TD>
+      <TD><A class="menu1" HREF="converter.html#null" tabindex=0 onClick="winopen('help.html','sidewindow',0,0,800,screen.height-100,',menubar=yes,toolbar=yes')" onMouseOver="if(erase_infos){window.status='';message(4)}" onMouseOut="if(erase_infos){message(0)}">Help</A></TD>
+      <TD><A class="menu1" HREF="converter.html#null" tabindex=0 onClick="winopen('examples.html','sidewindow',0,0,800,screen.height-100,',menubar=yes,toolbar=yes')" onMouseOver="if(erase_infos){window.status='';message(5)}" onMouseOut="if(erase_infos){message(0)}">Examples</A></TD>
+      <TD><A class="menu1" HREF="converter.html#null" tabindex=0 onClick="winopen('systems.html','sidewindow',0,0,800,screen.height-100,',menubar=yes,toolbar=yes')" onMouseOver="if(erase_infos){window.status='';message(6)}" onMouseOut="if(erase_infos){message(0)}">Systems of units</A></TD>
+      <TD><A class="menu1" HREF="converter.html#null" tabindex=0 onClick="winopen('prefixes.html','sidewindow',0,0,800,screen.height-100,',menubar=yes,toolbar=yes')" onMouseOver="if(erase_infos){window.status='';message(7)}" onMouseOut="if(erase_infos){message(0)}">Prefixes</A></TD>
+      <TD><A class="menu1" HREF="converter.html#null" tabindex=0 onClick="winopen('jsmath.html','sidewindow',0,0,800,screen.height-100,',menubar=yes,toolbar=yes')" onMouseOver="if(erase_infos){window.status='';message(8)}" onMouseOut="if(erase_infos){message(0)}">JS functions</A></TD>
+      <TD><A class="menu1" HREF="links.html" tabindex=0 onMouseOver="if(erase_infos){window.status='';message(9)};escape=true" onMouseOut="if(erase_infos){message(0)};escape=false">Links</A></TD>
+      </TR>
+    </TABLE>
+  </TD>
+  <TD class="small" ALIGN=CENTER>
+    <A class="sb" HREF="mailto:christophe.berthod@unige.ch" tabindex=0 onMouseOver="if(erase_infos){message(10)};escape=true" onMouseOut="if(erase_infos){message(0)};escape=false"<I>Comments and suggestions</I></A>
+  </TD>
+  </TR>
+  
+</TABLE>
+
+</FORM>
+
+</BODY>
+</HTML>

@@ -566,35 +566,55 @@ function pasteUnit(e) {
 // Functions uses to paste selected value of the drop down menu 'Unit to convert from'
 // in the field 'Unit to convert from'
 	if (e.value == "01") {
+		document.getElementById("unitfrom_id").focus();
 		document.getElementById("unitfrom_id").value = document.getElementById("display").innerHTML;
 	}
 	else if (e.value == "02") {
+		document.getElementById("unitfrom_id").focus();
 		document.getElementById("unitfrom_id").value = document.getElementById("display1").innerHTML;
 	}
 	else if (e.value == "03") {
+		document.getElementById("unitfrom_id").focus();
 		document.getElementById("unitfrom_id").value = document.getElementById("display2").innerHTML;
 	}
 	else if (e.value == "04") {
+		document.getElementById("unitfrom_id").focus();
 		document.getElementById("unitfrom_id").value = document.getElementById("display3").innerHTML;
 	}
 	else if (e.value == "05") {
+		document.getElementById("unitfrom_id").focus();
 		document.getElementById("unitfrom_id").value = document.getElementById("display4").innerHTML;
 	}
 	else if (e.value == "06") {
+		document.getElementById("unitfrom_id").focus();
 		document.getElementById("unitfrom_id").value = document.getElementById("display5").innerHTML;
 	}
 	else if (e.value == "07") {
+		document.getElementById("unitfrom_id").focus();
 		document.getElementById("unitfrom_id").value = document.getElementById("display6").innerHTML;
 	}
 	else if (e.value == "08") {
+		document.getElementById("unitfrom_id").focus();
 		document.getElementById("unitfrom_id").value = document.getElementById("display7").innerHTML;
 	}
 	else if (e.value == "09") {
+		document.getElementById("unitfrom_id").focus();
 		document.getElementById("unitfrom_id").value = document.getElementById("display8").innerHTML;
 	}
 	else if (e.value == "10") {
+		document.getElementById("unitfrom_id").focus();
 		document.getElementById("unitfrom_id").value = document.getElementById("display9").innerHTML;
 	}
+}
+
+
+function mouseCoordinates(event, elementId) {
+   var element = document.getElementById(elementId);
+   var bounds = element.getBoundingClientRect();
+   return {
+      x: event.clientX - bounds.left,
+      y: event.clientY - bounds.top
+   };
 }
 
 /////////////////////////////////////////////////////////////////////////

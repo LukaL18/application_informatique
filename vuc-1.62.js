@@ -494,70 +494,73 @@ function setCookie() {
   
 }
 
-function getCookie() {
+function getCookie(i) {
 // Get the cookie and display it in the drop down menu 'Unit to convert from'.
 // Can save and display the 10 first given values.
 	if (document.cookie.length != 0) {
 		var nameValueArray = document.cookie.split("=");
-		if ((document.getElementById("display").innerHTML == "") || (document.getElementById("display").innerHTML == nameValueArray[1])) {
-			document.getElementById("display").innerHTML = nameValueArray[1];
-			if (nameValueArray[2] != undefined) {
-				document.getElementById("display").innerHTML = nameValueArray[1].replace("unitfrom1", "");
+		if ((document.getElementById("display").innerHTML == "") || (document.getElementById("display").innerHTML == nameValueArray[i]) || (nameValueArray[i] != undefined)) {
+			document.getElementById("display").innerHTML = nameValueArray[i];
+			if (nameValueArray[i+1] != undefined) {
+				document.getElementById("display").innerHTML = nameValueArray[i].replace("unitfrom1", "");
 			}
 		}
-		if (nameValueArray[2] != undefined) {
-			document.getElementById("display1").innerHTML = nameValueArray[2];
-			if (nameValueArray[3] != undefined) {
-				document.getElementById("display1").innerHTML = nameValueArray[2].replace("unitfrom1", "");
+		if (nameValueArray[i+1] != undefined) {
+			document.getElementById("display1").innerHTML = nameValueArray[i+1];
+			if (nameValueArray[i+2] != undefined) {
+				document.getElementById("display1").innerHTML = nameValueArray[i+1].replace("unitfrom1", "");
 			}
 		}
-		if (nameValueArray[3] != undefined) {
-			document.getElementById("display2").innerHTML = nameValueArray[3];
-			if (nameValueArray[4] != undefined) {
-				document.getElementById("display2").innerHTML = nameValueArray[3].replace("unitfrom1", "");
+		if (nameValueArray[i+2] != undefined) {
+			document.getElementById("display2").innerHTML = nameValueArray[i+2];
+			if (nameValueArray[i+3] != undefined) {
+				document.getElementById("display2").innerHTML = nameValueArray[i+2].replace("unitfrom1", "");
 			}
 		}
-		if (nameValueArray[4] != undefined) {
-			document.getElementById("display3").innerHTML = nameValueArray[4];
-			if (nameValueArray[5] != undefined) {
-				document.getElementById("display3").innerHTML = nameValueArray[4].replace("unitfrom1", "");
+		if (nameValueArray[i+3] != undefined) {
+			document.getElementById("display3").innerHTML = nameValueArray[i+3];
+			if (nameValueArray[i+4] != undefined) {
+				document.getElementById("display3").innerHTML = nameValueArray[i+3].replace("unitfrom1", "");
 			}
 		}
-		if (nameValueArray[5] != undefined) {
-			document.getElementById("display4").innerHTML = nameValueArray[5];
-			if (nameValueArray[6] != undefined) {
-				document.getElementById("display4").innerHTML = nameValueArray[5].replace("unitfrom1", "");
+		if (nameValueArray[i+4] != undefined) {
+			document.getElementById("display4").innerHTML = nameValueArray[i+4];
+			if (nameValueArray[i+5] != undefined) {
+				document.getElementById("display4").innerHTML = nameValueArray[i+4].replace("unitfrom1", "");
 			}
 		}
-		if (nameValueArray[6] != undefined) {
-			document.getElementById("display5").innerHTML = nameValueArray[6];
-			if (nameValueArray[7] != undefined) {
-				document.getElementById("display5").innerHTML = nameValueArray[6].replace("unitfrom1", "");
+		if (nameValueArray[i+5] != undefined) {
+			document.getElementById("display5").innerHTML = nameValueArray[i+5];
+			if (nameValueArray[i+6] != undefined) {
+				document.getElementById("display5").innerHTML = nameValueArray[i+5].replace("unitfrom1", "");
 			}
 		}
-		if (nameValueArray[7] != undefined) {
-			document.getElementById("display6").innerHTML = nameValueArray[7];
-			if (nameValueArray[8] != undefined) {
-				document.getElementById("display6").innerHTML = nameValueArray[7].replace("unitfrom1", "");
+		if (nameValueArray[i+6] != undefined) {
+			document.getElementById("display6").innerHTML = nameValueArray[i+6];
+			if (nameValueArray[i+7] != undefined) {
+				document.getElementById("display6").innerHTML = nameValueArray[i+6].replace("unitfrom1", "");
 			}
 		}
-		if (nameValueArray[8] != undefined) {
-			document.getElementById("display7").innerHTML = nameValueArray[8];
-			if (nameValueArray[9] != undefined) {
-				document.getElementById("display7").innerHTML = nameValueArray[8].replace("unitfrom1", "");
+		if (nameValueArray[i+7] != undefined) {
+			document.getElementById("display7").innerHTML = nameValueArray[i+7];
+			if (nameValueArray[i+8] != undefined) {
+				document.getElementById("display7").innerHTML = nameValueArray[i+7].replace("unitfrom1", "");
 			}
 		}
-		if (nameValueArray[9] != undefined) {
-			document.getElementById("display8").innerHTML = nameValueArray[9];
-			if (nameValueArray[10] != undefined) {
-				document.getElementById("display8").innerHTML = nameValueArray[9].replace("unitfrom1", "");
+		if (nameValueArray[i+8] != undefined) {
+			document.getElementById("display8").innerHTML = nameValueArray[i+8];
+			if (nameValueArray[i+9] != undefined) {
+				document.getElementById("display8").innerHTML = nameValueArray[i+8].replace("unitfrom1", "");
 			}
 		}
-		if (nameValueArray[10] != undefined) {
-			document.getElementById("display9").innerHTML = nameValueArray[10];
-			if (nameValueArray[11] != undefined) {
-				document.getElementById("display9").innerHTML = nameValueArray[10].replace("unitfrom1", "");
+		if (nameValueArray[i+9] != undefined) {
+			document.getElementById("display9").innerHTML = nameValueArray[i+9];
+			if (nameValueArray[i+10] != undefined) {
+				document.getElementById("display9").innerHTML = nameValueArray[i+9].replace("unitfrom1", "");
 			}
+		}
+		if (nameValueArray[i+10] != undefined) {
+			getCookie(i+10); // Recursive call to save the most recent value by erasing the oldest one
 		}
 	}
 }

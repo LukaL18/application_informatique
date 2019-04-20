@@ -608,15 +608,6 @@ function pasteUnit(e) {
 }
 
 
-function mouseCoordinates(event, elementId) {
-   var element = document.getElementById(elementId);
-   var bounds = element.getBoundingClientRect();
-   return {
-      x: event.clientX - bounds.left,
-      y: event.clientY - bounds.top
-   };
-}
-
 /////////////////////////////////////////////////////////////////////////
 //////////////////////  INIT AND UPDATE ROUTINES  ///////////////////////
 /////////////////////////////////////////////////////////////////////////

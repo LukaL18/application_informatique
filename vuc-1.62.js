@@ -481,17 +481,97 @@ AdTab=[["m","kg","s","A","K","rad","cd","mol"],
 
 function setCookie() { 
 // Set the cookie to save the value given in Unit In.
+	var d = new Date();
+	d.setTime(d.getTime() + (365*24*60*60*1000)); // Store the cookies for 1 year
+	var expires = "expires=" + d.toUTCString();
+	
 	if (document.cookie.length == 0) {
-		var d = new Date();
-		d.setTime(d.getTime() + (365*24*60*60*1000)); // Store the cookies for 1 year
-		var expires = "expires=" + d.toUTCString();
-		var temp = "unitfrom=" + document.getElementById("unitfrom_id").value;
 		document.cookie = "unitfrom=" + document.getElementById("unitfrom_id").value + ";" + expires + ";";
 	}
 	else {
-		document.cookie = document.cookie + "unitfrom1=" + document.getElementById("unitfrom_id").value + ";" + expires + ";";
+		// Have to check if the unit is already store in the drop down menu. 
+		// If it is the case we don't had the same unit again in the drop down menu
+		var nameValueArray = document.cookie.split("=");
+		var boolean = true;
+		if (nameValueArray.length < 11) { // if length < 11 have to check if one of 9 first is the same
+			for (var i=1; i < nameValueArray.length; i++) {
+				if (nameValueArray[i] == document.getElementById("unitfrom_id").value) {
+					boolean = false;
+				}
+				if (nameValueArray[i].replace("unitfrom1", "") == document.getElementById("unitfrom_id").value) {
+					boolean = false;
+				}
+			}
+		}
+		else { // if length > 11 have to check for the 10 previous by calling function setCookieDifferentUnit
+			boolean = setCookieDifferentUnit(nameValueArray, nameValueArray.length);
+		}
+		if (boolean == true) { // If boolean == true we add the new unit in the cookie
+			document.cookie = document.cookie + "unitfrom1=" + document.getElementById("unitfrom_id").value + ";" + expires + ";";
+		}
+		
 	}
-  
+}
+
+
+function setCookieDifferentUnit(namearray, length) {
+// Function receive array of cookie and length of the array in parameters
+// It checks if one of the 10 previous object in array is the same of the new given unit 
+// If it is the case return false, else return true
+	var loopInitialValue = length;
+	var boolean2 = true;
+	
+	if ((length % 10) == 1) {
+		loopInitialValue = length;
+	}
+	else if (((length-1) % 10) == 1) {
+		loopInitialValue = length-1;
+	}
+	else if (((length-2) % 10) == 1) {
+		loopInitialValue = length-2;
+	}
+	else if (((length-3) % 10) == 1) {
+		loopInitialValue = length-3;
+	}
+	else if (((length-4) % 10) == 1) {
+		loopInitialValue = length-4;
+	}
+	else if (((length-5) % 10) == 1) {
+		loopInitialValue = length-5;
+	}
+	else if (((length-6) % 10) == 1) {
+		loopInitialValue = length-6;
+	}
+	else if (((length-7) % 10) == 1) {
+		loopInitialValue = length-7;
+	}
+	else if (((length-8) % 10) == 1) {
+		loopInitialValue = length-8;
+	}
+	else if (((length-9) % 10) == 1) {
+		loopInitialValue = length-9;
+	}
+	
+	for (var i=loopInitialValue; i < length; i++) {
+		if (namearray[i] == document.getElementById("unitfrom_id").value) {
+			boolean2 = false;
+		}
+		if (namearray[i].replace("unitfrom1", "") == document.getElementById("unitfrom_id").value) {
+			boolean2 = false;
+		}
+	}
+	
+	for (var i=length-1; i > length-10; i--) {
+		if (namearray[i] == document.getElementById("unitfrom_id").value) {
+			boolean2 = false;
+		}
+		if (namearray[i].replace("unitfrom1", "") == document.getElementById("unitfrom_id").value) {
+			boolean2 = false;
+		}
+	}
+	
+	return boolean2;
+	
 }
 
 function getCookie(i) {

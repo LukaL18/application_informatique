@@ -509,8 +509,8 @@ function setCookie() {
 		if (boolean == true) { // If boolean == true we add the new unit in the cookie
 			document.cookie = document.cookie + "unitfrom1=" + document.getElementById("unitfrom_id").value + ";" + expires + ";";
 		}
-		
 	}
+	getCookie(1);
 }
 
 

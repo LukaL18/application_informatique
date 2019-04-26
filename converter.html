@@ -1,24 +1,16 @@
-
-<HTML>
-
-<HEAD>
+<HTML>
+<HEAD>
   <TITLE>The Versatile Unit Converter</TITLE>
   <META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
   <META NAME="Author" CONTENT="Christophe Berthod">
   <META NAME="Keywords" CONTENT="unit,units,conversion,converter,javascript">
   <META NAME="Description" CONTENT="With this unit converter, you can mix the units as you like!">
-  <LINK REL="stylesheet" TYPE="text/css" HREF="vuc.css">
-
-  <SCRIPT LANGUAGE="JavaScript" SRC="vuc-1.62.js"></SCRIPT>
-
-</HEAD>
-
-
-
-<BODY BGCOLOR="#333333" onLoad="getCookie(1);Event(document.main,0);" onClick="Validate(document.main,'Click')">
-
-<FORM name="main">
-
+  <LINK REL="stylesheet" TYPE="text/css" HREF="vuc.css">
+  <SCRIPT LANGUAGE="JavaScript" SRC="vuc-1.62.js"></SCRIPT>
+</HEAD>
+
+<BODY BGCOLOR="#333333" onLoad="getCookie(1);Event(document.main,0);" onClick="Validate(document.main,'Click')">
+<FORM name="main" autocomplete="off">
 <TABLE BORDER=0 CELLPADDING=4 CELLSPACING=1 WIDTH="100%" HEIGHT="250" BGCOLOR="#FFFF99">
   <TR>
     <TD ALIGN=CENTER>
@@ -44,12 +36,12 @@
     <TD MIN-WIDTH="28%" ALIGN=CENTER VALIGN=TOP BGCOLOR="#6699FF">
       <A class="field" HREF="converter.html#null" tabindex=0 onClick="winopen('help.html#number','sidewindow',0,0,800,screen.height-100,',menubar=yes,toolbar=yes')" onMouseOver="window.status='';message(34)" onMouseOut="message(0)">
       Number to convert</A><BR>
-      <INPUT class="courier" NAME="ValueIn" SIZE="25" tabindex=1 onFocus="Event(document.main,15);in_ValueIn=true" onMouseOut="if(in_ValueIn){in_ValueIn=false;check_ValueIn=true}" onBlur="if(in_ValueIn){in_ValueIn=false;check_ValueIn=true}">
+      <INPUT autocomplete="off" class="courier" NAME="ValueIn" SIZE="25" tabindex=1 onFocus="Event(document.main,15);in_ValueIn=true" onMouseOut="if(in_ValueIn){in_ValueIn=false;check_ValueIn=true}" onBlur="if(in_ValueIn){in_ValueIn=false;check_ValueIn=true}">
     </TD>
     <TD ALIGN=CENTER VALIGN=TOP BGCOLOR="#6699FF">
       <A class="field" HREF="converter.html#null" tabindex=0 onClick="winopen('help.html#from','sidewindow',0,0,800,screen.height-100,',menubar=yes,toolbar=yes')" onMouseOver="window.status='';message(35)" onMouseOut="message(0)">
       Unit to convert from</A><BR>
-      <INPUT class="courier" NAME="UnitIn" SIZE="45" tabindex=2 onFocus="Event(document.main,15);in_UnitIn=true" onMouseOut="if(in_UnitIn){in_UnitIn=false;check_UnitIn=true}" onBlur="if(in_UnitIn){in_UnitIn=false;check_UnitIn=true}" id="unitfrom_id" value="">
+      <INPUT autocomplete="off" class="courier" NAME="UnitIn" SIZE="45" tabindex=2 onFocus="Event(document.main,15);in_UnitIn=true" onMouseOut="if(in_UnitIn){in_UnitIn=false;check_UnitIn=true}" onBlur="if(in_UnitIn){in_UnitIn=false;check_UnitIn=true}" id="unitfrom_id" value="">
       <br>
       <I class="field">
       Units you already use:
@@ -94,7 +86,7 @@
     <TD ALIGN=CENTER VALIGN=TOP BGCOLOR="#6699FF">
       <A class="field" HREF="converter.html#null" tabindex=0 onClick="winopen('help.html#to','sidewindow',0,0,800,screen.height-100,',menubar=yes,toolbar=yes')" onMouseOver="window.status='';message(36)" onMouseOut="message(0)">
       Unit to convert to</A><BR>
-      <INPUT class="courier" NAME="UnitOut" SIZE="45" tabindex=3 onFocus="Event(document.main,15);in_UnitOut=true" onMouseOut="if(in_UnitOut){in_UnitOut=false;check_UnitOut=true}" onBlur="if(in_UnitOut){in_UnitOut=false;check_UnitOut=true}"><BR>
+      <INPUT autocomplete="off" class="courier" NAME="UnitOut" SIZE="45" tabindex=3 onFocus="Event(document.main,15);in_UnitOut=true" onMouseOut="if(in_UnitOut){in_UnitOut=false;check_UnitOut=true}" onBlur="if(in_UnitOut){in_UnitOut=false;check_UnitOut=true}"><BR>
       <I class="field">
       System
       <B><SELECT NAME="Systems" tabindex=4 onChange="Event(document.main,8)" onMouseOver="escape=true" onMouseOut="escape=false">
@@ -111,16 +103,16 @@
   <TR>
     <TD ALIGN=CENTER>
       <INPUT class="buttonr" NAME="clear" TYPE=BUTTON VALUE="&nbsp;&nbsp;Clear&nbsp;&nbsp;" tabindex=0 onClick="Event(document.main,10)" onMouseOver="escape=true" onMouseOut="escape=false">&nbsp;&nbsp;
-      <B><INPUT class="buttonr" NAME="adapt" TYPE=BUTTON VALUE="&nbsp;&nbsp;Adapt&nbsp;&nbsp;" tabindex=0 onClick="Event(document.main,11)"></B>&nbsp;&nbsp;
+      <B><INPUT class="buttonr" NAME="adapt" TYPE=BUTTON VALUE="&nbsp;&nbsp;Adapt&nbsp;&nbsp;" tabindex=0 onClick="setCookie();Event(document.main,11)"></B>&nbsp;&nbsp;
       <B><INPUT class="buttonr" NAME="convert" TYPE=BUTTON VALUE="&nbsp;Convert&nbsp;" tabindex=5 onClick="setCookie();Event(document.main,12);"></B>
     </TD>
     <TD ALIGN=CENTER COLSPAN=2 BGCOLOR="#6699FF">
       <A class="field" HREF="converter.html#null" tabindex=0 onClick="winopen('help.html#molar','sidewindow',0,0,800,screen.height-100,',menubar=yes,toolbar=yes')" onMouseOver="window.status=''">
       Molar volume (l/mol)</A>
-      <INPUT NAME="Vmol" VALUE="22.4141" SIZE="12%" tabindex=0 onFocus="Event(document.main,15);in_Vmol=true" onMouseOut="if(in_Vmol){in_Vmol=false;check_Vmol=true}" onBlur="if(in_Vmol){in_Vmol=false;check_Vmol=true}">&nbsp;&nbsp;
+      <INPUT autocomplete="off" NAME="Vmol" VALUE="22.4141" SIZE="12%" tabindex=0 onFocus="Event(document.main,15);in_Vmol=true" onMouseOut="if(in_Vmol){in_Vmol=false;check_Vmol=true}" onBlur="if(in_Vmol){in_Vmol=false;check_Vmol=true}">&nbsp;&nbsp;
       <A class="field" HREF="converter.html#null" tabindex=0 onClick="winopen('help.html#molar','sidewindow',0,0,800,screen.height-100,',menubar=yes,toolbar=yes')" onMouseOver="window.status=''">
       Molar mass (g/mol)</A>
-      <INPUT NAME="Mmol" VALUE="1" SIZE="12%" tabindex=0 onFocus="Event(document.main,15);in_Mmol=true" onMouseOut="if(in_Mmol){in_Mmol=false;check_Mmol=true}" onBlur="if(in_Mmol){in_Mmol=false;check_Mmol=true}">
+      <INPUT autocomplete="off" NAME="Mmol" VALUE="1" SIZE="12%" tabindex=0 onFocus="Event(document.main,15);in_Mmol=true" onMouseOut="if(in_Mmol){in_Mmol=false;check_Mmol=true}" onBlur="if(in_Mmol){in_Mmol=false;check_Mmol=true}">
     </TD>
   </TR>
 </TABLE>
@@ -509,16 +501,14 @@ Symbols of the units</A></TD>
 <OPTION>Yi : 2^80 - yobi
 </SELECT></I>
 </TD>
-</TR></TABLE>
-
+</TR></TABLE>
 <TABLE class="message"><TR>
 <TD WIDTH="5%" ALIGN=RIGHT VALIGN=TOP>
   <IMG SRC="gifs/happy.gif" NAME="pic" BORDER=0 ALIGN=CENTER>
 </TD>
 <TD class="message" onDblClick="Event(document.main,16)">
 <DIV class="message" ID="Mess">&nbsp;</DIV></TD>
-</TR></TABLE>
-
+</TR></TABLE>
 <TABLE BORDER=0 CELLPADDING=1 CELLSPACING=1 WIDTH="100%" BGCOLOR=#FFFF99>
   <TR VALIGN=CENTER>
   <TD ALIGN=LEFT>
@@ -538,11 +528,8 @@ Symbols of the units</A></TD>
   <TD class="small" ALIGN=CENTER>
     <A class="sb" HREF="mailto:christophe.berthod@unige.ch" tabindex=0 onMouseOver="if(erase_infos){message(10)};escape=true" onMouseOut="if(erase_infos){message(0)};escape=false"<I>Comments and suggestions</I></A>
   </TD>
-  </TR>
-  
-</TABLE>
-
-</FORM>
-
+  </TR>
+</TABLE>
+</FORM>
 </BODY>
 </HTML>

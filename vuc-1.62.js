@@ -479,14 +479,20 @@ AdTab=[["m","kg","s","A","K","rad","cd","mol"],
 //////////////////////  COOKIES HANDLING  ///////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 
+
 function setCookie() { 
 // Set the cookie to save the value given in Unit In.
 	var d = new Date();
 	d.setTime(d.getTime() + (365*24*60*60*1000)); // Store the cookies for 1 year
 	var expires = "expires=" + d.toUTCString();
+	//var domain = "domain=" + ".unige.ch";
 	
 	if (document.cookie.length == 0) {
-		document.cookie = "unitfrom=" + document.getElementById("unitfrom_id").value + ";" + expires + ";";
+		if (document.getElementById("unitfrom_id").value != "") { // Empty unit is not allowed in the drop down menu
+			if (ParseUnit(document.getElementById("unitfrom_id").value, false).length != 1) { // Check if the unit given is an allowed unit
+				document.cookie = "unitfrom=" + document.getElementById("unitfrom_id").value + ";" + expires + ";"; // + domain + ";";
+			}
+		}
 	}
 	else {
 		// Have to check if the unit is already store in the drop down menu. 
@@ -507,7 +513,11 @@ function setCookie() {
 			boolean = setCookieDifferentUnit(nameValueArray, nameValueArray.length);
 		}
 		if (boolean == true) { // If boolean == true we add the new unit in the cookie
-			document.cookie = document.cookie + "unitfrom1=" + document.getElementById("unitfrom_id").value + ";" + expires + ";";
+			if (document.getElementById("unitfrom_id").value != "") { // Empty unit is not allowed in the drop down menu
+				if (ParseUnit(document.getElementById("unitfrom_id").value, false).length != 1) { // Check if the unit given is an allowed unit
+				document.cookie = document.cookie + "unitfrom1=" + document.getElementById("unitfrom_id").value + ";" + expires + ";"; // + domain + ";";
+				}
+			}
 		}
 	}
 	getCookie(1);
@@ -807,35 +817,39 @@ function nextop(s)
   return s
 }
 
-function closing(s)
+function closing(s, display=true)
 // Returns the substring defined by the closing parenthesis for a string
 // beginning with "(", or returns "error"
+// If display=true, displays the error messages, else it parses without
+// displaying it.
 {
-  if(s.indexOf(")")==1){fatal(4,s);return "error"}
+  if(s.indexOf(")")==1){if(display==true){fatal(4,s);}return "error"}
   var p=1
   for(var i=1;i<=s.length;i++)
   {
     if(s.substring(i,i+1)=="("){p+=1};if(s.substring(i,i+1)==")"){p-=1}
     if(p==0){return s.substring(1,i)}
   }
-  fatal(3,s);return "error"
+  if(display==true){fatal(3,s);}return "error"
 }
 
-function preformat(s)
+function preformat(s, display=true)
 // Converts a string containing neither "/" nor "(" into the format
 // "a1^n1 a2^n2 ...". Returns "error" if something goes wrong
+// If display=true, displays the error messages, else it parses without
+// displaying it.
 {
   s=clean(s);if(s=="error"||s.length==0){return s}
   var s1=s+" ";var s2=s1;s=""
-  if(s1.indexOf("^")==0){fatal(1,s1);return "error"}
+  if(s1.indexOf("^")==0){if(display==true){fatal(1,s1);}return "error"}
   while(s1.length>0)
   {
     s2=s1.substring(0,s1.indexOf(" "));s1=s1.substring(s2.length+1,s1.length);s+=s2
     if(s2.indexOf("^")>0)
     {
       var exp=s2.substring(s2.indexOf("^")+1,s2.length)
-      if(exp.length==0){fatal(10,s2);return "error"}
-      if(isNaN(Number(exp))||Number(exp)!=Math.round(Number(exp))||Number(exp)==0){fatal(2,exp);return "error"}
+      if(exp.length==0){if(display==true){fatal(10,s2);}return "error"}
+      if(isNaN(Number(exp))||Number(exp)!=Math.round(Number(exp))||Number(exp)==0){if(display==true){fatal(2,exp);}return "error"}
       s+=" "
     } else {s+="^1 "}
   }
@@ -861,27 +875,29 @@ function power(s,n)
 //  *************
 //
 
-function expand(s)
+function expand(s, display=true)
 // Expands an expression with "/" and "(" operators as a product "a1^n1 a2^n2 ..."
 // Returns "error" if something goes wrong
 // The function calls itself recursively
+// If display=true, displays the error messages, else it parses without
+// displaying it.
 {
   var s1=nextop(s);var s2="";var f=1
-  if(s1==s){return clean(preformat(s))}
-  var st=preformat(s1);if(st=="error"){return st}else{st+=" "}
+  if(display==false){if(s1==s){return clean(preformat(s,false))}}else{if(s1==s){return clean(preformat(s))}}
+  if(display==false){var st=preformat(s1,false)}else{var st=preformat(s1)}if(st=="error"){return st}else{st+=" "}
   s1=clean(s.substring(s1.length,s.length))
   if(s1.substring(0,1)=="/"){s1=s1.substring(1,s1.length);f=-1}
   if(s1.substring(0,1)=="(")
   {
-    s2=closing(s1);if(s2=="error"){return "error"}
+    if(display==false){s2=closing(s1,false)}else{s2=closing(s1)}if(s2=="error"){return "error"}
     s1=s1.substring(s2.length+2,s1.length)
     if(s1.substring(0,1)=="^")
     {
       var exp=s1.substring(1,Math.min((s1+" ").indexOf(" "),nextop(s1).length))
       if(isNaN(Number(exp))||exp.length==0||Number(exp)==0)
       {
-        if(isNaN(Number(exp))||Number(exp)!=Math.round(Number(exp))||Number(exp)==0){fatal(2,exp)}
-        if(exp.length==0){fatal(10,s2+"^")}
+        if(isNaN(Number(exp))||Number(exp)!=Math.round(Number(exp))||Number(exp)==0){if(display==true){fatal(2,exp);}}
+        if(exp.length==0){if(display==true){fatal(10,s2+"^");}}
         var n="error"
       } else {var n=parseInt(exp)}
       s1=s1.substring(exp.length+1,s1.length)
@@ -891,15 +907,15 @@ function expand(s)
   {
     s1=clean(s1);s2=s1.substring(0,Math.min((s1+" ").indexOf(" "),nextop(s1).length))
     s1=s1.substring(s2.length,s1.length)
-    if(s2.length==0){fatal(11,"");var n="error"}else{var n=1}
+    if(s2.length==0){if(display==true){fatal(11,"");}var n="error"}else{var n=1}
   }
   if(n=="error"){return "error"}
-  st=st+power(expand(s2),n*f)+" "+expand(s1)
+  if(display==false){st=st+power(expand(s2,false),n*f)+" "+expand(s1,false)}else{st=st+power(expand(s2),n*f)+" "+expand(s1)}
   if(st.indexOf("error")!=-1){st="error"}
   return clean(st)
 }
 
-function ParseUnit(s)
+function ParseUnit(s, display=true)
 // Takes any user input and returns an array
 // The array structure is:
 // u[n][0] = value of the prefix for the nth unit
@@ -908,8 +924,10 @@ function ParseUnit(s)
 // u[u.length-1] = "dimension"
 // If s="" => u.length=0; If the input contains an error => u.length=1
 // The function also sets the global variable Tshift
+// If display=true, displays the error messages, else it parses without
+// displaying it.
 {
-  var u=new Array(0);s=expand(s)
+  var u=new Array(0);if(display==false){s=expand(s,false);}else{s=expand(s);}
   if(s==""){return u}
   if(s=="error"){u=new Array(1);return u}
   var n=0;var i=0;var j=0;var k=0;var l=0;var jj=0
@@ -974,8 +992,8 @@ function ParseUnit(s)
     // Finally tries to identify the symbol as a number
     if(ok==false)
     {
-      if(isNaN(Number(s2))){u=new Array(1);fatal(6,s2);return u}
-      if(Number(s2)==0){u=new Array(1);fatal(14,"");return u}
+      if(isNaN(Number(s2))){u=new Array(1);if(display==true){fatal(6,s2);}return u}
+      if(Number(s2)==0){u=new Array(1);if(display==true){fatal(14,"");}return u}
       u[n][0]=u[n][0]*Number(s2);u[n][1]=0
     }
     n++;ok=false
@@ -993,6 +1011,7 @@ function ParseUnit(s)
     if((unit[u[n][1]][0][0]=="oC"||unit[u[n][1]][0][0]=="oF")&&n>0){Tshift=false}
   }
   //
+  
   return u
 }
 

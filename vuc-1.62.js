@@ -485,26 +485,28 @@ function setCookie() {
 	var d = new Date();
 	d.setTime(d.getTime() + (365*24*60*60*1000)); // Store the cookies for 1 year
 	var expires = "expires=" + d.toUTCString();
-	//var domain = "domain=" + ".unige.ch";
+	var path = "path=/";
+	// var domain = "domain=" + "mafalda.unige.ch";
 	
 	if (document.cookie.length == 0) {
 		if (document.getElementById("unitfrom_id").value != "") { // Empty unit is not allowed in the drop down menu
 			if (ParseUnit(document.getElementById("unitfrom_id").value, false).length != 1) { // Check if the unit given is an allowed unit
-				document.cookie = "unitfrom=" + document.getElementById("unitfrom_id").value + ";" + expires + ";"; // + domain + ";";
+				document.cookie = "unitfrom=" + document.getElementById("unitfrom_id").value + ";" + expires + ";" + path + ";";
 			}
 		}
 	}
 	else {
 		// Have to check if the unit is already store in the drop down menu. 
 		// If it is the case we don't had the same unit again in the drop down menu
-		var nameValueArray = document.cookie.split("=");
+		var temp = document.cookie.replace("unitfrom=","");
+		var nameValueArray = temp.split("-");
 		var boolean = true;
 		if (nameValueArray.length < 11) { // if length < 11 have to check if one of 9 first is the same
-			for (var i=1; i < nameValueArray.length; i++) {
+			for (var i=0; i < nameValueArray.length; i++) {
 				if (nameValueArray[i] == document.getElementById("unitfrom_id").value) {
 					boolean = false;
 				}
-				if (nameValueArray[i].replace("unitfrom1", "") == document.getElementById("unitfrom_id").value) {
+				if (nameValueArray[i].replace("-","") == document.getElementById("unitfrom_id").value) {
 					boolean = false;
 				}
 			}
@@ -515,12 +517,12 @@ function setCookie() {
 		if (boolean == true) { // If boolean == true we add the new unit in the cookie
 			if (document.getElementById("unitfrom_id").value != "") { // Empty unit is not allowed in the drop down menu
 				if (ParseUnit(document.getElementById("unitfrom_id").value, false).length != 1) { // Check if the unit given is an allowed unit
-				document.cookie = document.cookie + "unitfrom1=" + document.getElementById("unitfrom_id").value + ";" + expires + ";"; // + domain + ";";
+				document.cookie = document.cookie + "-" + document.getElementById("unitfrom_id").value + ";" + expires + ";" + path + ";";
 				}
 			}
 		}
 	}
-	getCookie(1);
+	getCookie(0);
 }
 
 
@@ -566,7 +568,7 @@ function setCookieDifferentUnit(namearray, length) {
 		if (namearray[i] == document.getElementById("unitfrom_id").value) {
 			boolean2 = false;
 		}
-		if (namearray[i].replace("unitfrom1", "") == document.getElementById("unitfrom_id").value) {
+		if (namearray[i].replace("-","") == document.getElementById("unitfrom_id").value) {
 			boolean2 = false;
 		}
 	}
@@ -575,7 +577,7 @@ function setCookieDifferentUnit(namearray, length) {
 		if (namearray[i] == document.getElementById("unitfrom_id").value) {
 			boolean2 = false;
 		}
-		if (namearray[i].replace("unitfrom1", "") == document.getElementById("unitfrom_id").value) {
+		if (namearray[i].replace("-","") == document.getElementById("unitfrom_id").value) {
 			boolean2 = false;
 		}
 	}
@@ -584,69 +586,87 @@ function setCookieDifferentUnit(namearray, length) {
 	
 }
 
+function delete_cookie(name) {
+// Function uses to delete foreigner cookies
+// We have to precise the domain they are coming from, if we don't do it
+// it creates new cookies (but deleted immediately) of the same name 
+// in our subdomain
+	document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT; domain=.unige.ch; path=/";
+}
+
 function getCookie(i) {
 // Get the cookie and display it in the drop down menu 'Unit to convert from'.
-// Can save and display the 10 first given values.
+// Can save and display the 10 most recent given values.
 	if (document.cookie.length != 0) {
-		var nameValueArray = document.cookie.split("=");
+			
+		var newArray = document.cookie.split(";");			// Check if have some others cookies (coming from outside of the program) to delete them
+		for (var k = 0; k < newArray.length; k++) {
+			var newArraytemp = newArray[k].split("=");
+			if (newArraytemp[0] != "unitfrom") {
+				delete_cookie(newArraytemp[0]);
+			}
+		}
+		
+		//alert(document.cookie);
+		var nameValueArray = document.cookie.split("-");
 		if ((document.getElementById("display").innerHTML == "") || (document.getElementById("display").innerHTML == nameValueArray[i]) || (nameValueArray[i] != undefined)) {
-			document.getElementById("display").innerHTML = nameValueArray[i];
+			document.getElementById("display").innerHTML = nameValueArray[i].replace("unitfrom=", "");
 			if (nameValueArray[i+1] != undefined) {
-				document.getElementById("display").innerHTML = nameValueArray[i].replace("unitfrom1", "");
+				document.getElementById("display").innerHTML = nameValueArray[i].replace("-", "").replace("unitfrom=", "");
 			}
 		}
 		if (nameValueArray[i+1] != undefined) {
 			document.getElementById("display1").innerHTML = nameValueArray[i+1];
 			if (nameValueArray[i+2] != undefined) {
-				document.getElementById("display1").innerHTML = nameValueArray[i+1].replace("unitfrom1", "");
+				document.getElementById("display1").innerHTML = nameValueArray[i+1].replace("-", "");
 			}
 		}
 		if (nameValueArray[i+2] != undefined) {
 			document.getElementById("display2").innerHTML = nameValueArray[i+2];
 			if (nameValueArray[i+3] != undefined) {
-				document.getElementById("display2").innerHTML = nameValueArray[i+2].replace("unitfrom1", "");
+				document.getElementById("display2").innerHTML = nameValueArray[i+2].replace("-", "");
 			}
 		}
 		if (nameValueArray[i+3] != undefined) {
 			document.getElementById("display3").innerHTML = nameValueArray[i+3];
 			if (nameValueArray[i+4] != undefined) {
-				document.getElementById("display3").innerHTML = nameValueArray[i+3].replace("unitfrom1", "");
+				document.getElementById("display3").innerHTML = nameValueArray[i+3].replace("-", "");
 			}
 		}
 		if (nameValueArray[i+4] != undefined) {
 			document.getElementById("display4").innerHTML = nameValueArray[i+4];
 			if (nameValueArray[i+5] != undefined) {
-				document.getElementById("display4").innerHTML = nameValueArray[i+4].replace("unitfrom1", "");
+				document.getElementById("display4").innerHTML = nameValueArray[i+4].replace("-", "");
 			}
 		}
 		if (nameValueArray[i+5] != undefined) {
 			document.getElementById("display5").innerHTML = nameValueArray[i+5];
 			if (nameValueArray[i+6] != undefined) {
-				document.getElementById("display5").innerHTML = nameValueArray[i+5].replace("unitfrom1", "");
+				document.getElementById("display5").innerHTML = nameValueArray[i+5].replace("-", "");
 			}
 		}
 		if (nameValueArray[i+6] != undefined) {
 			document.getElementById("display6").innerHTML = nameValueArray[i+6];
 			if (nameValueArray[i+7] != undefined) {
-				document.getElementById("display6").innerHTML = nameValueArray[i+6].replace("unitfrom1", "");
+				document.getElementById("display6").innerHTML = nameValueArray[i+6].replace("-", "");
 			}
 		}
 		if (nameValueArray[i+7] != undefined) {
 			document.getElementById("display7").innerHTML = nameValueArray[i+7];
 			if (nameValueArray[i+8] != undefined) {
-				document.getElementById("display7").innerHTML = nameValueArray[i+7].replace("unitfrom1", "");
+				document.getElementById("display7").innerHTML = nameValueArray[i+7].replace("-", "");
 			}
 		}
 		if (nameValueArray[i+8] != undefined) {
 			document.getElementById("display8").innerHTML = nameValueArray[i+8];
 			if (nameValueArray[i+9] != undefined) {
-				document.getElementById("display8").innerHTML = nameValueArray[i+8].replace("unitfrom1", "");
+				document.getElementById("display8").innerHTML = nameValueArray[i+8].replace("-", "");
 			}
 		}
 		if (nameValueArray[i+9] != undefined) {
 			document.getElementById("display9").innerHTML = nameValueArray[i+9];
 			if (nameValueArray[i+10] != undefined) {
-				document.getElementById("display9").innerHTML = nameValueArray[i+9].replace("unitfrom1", "");
+				document.getElementById("display9").innerHTML = nameValueArray[i+9].replace("-", "");
 			}
 		}
 		if (nameValueArray[i+10] != undefined) {
@@ -661,42 +681,52 @@ function pasteUnit(e) {
 	if (e.value == "01") {
 		document.getElementById("unitfrom_id").focus();
 		document.getElementById("unitfrom_id").value = document.getElementById("display").innerHTML;
+		document.getElementById("unitfrom_id").blur();
 	}
 	else if (e.value == "02") {
 		document.getElementById("unitfrom_id").focus();
 		document.getElementById("unitfrom_id").value = document.getElementById("display1").innerHTML;
+		document.getElementById("unitfrom_id").blur();
 	}
 	else if (e.value == "03") {
 		document.getElementById("unitfrom_id").focus();
 		document.getElementById("unitfrom_id").value = document.getElementById("display2").innerHTML;
+		document.getElementById("unitfrom_id").blur();
 	}
 	else if (e.value == "04") {
 		document.getElementById("unitfrom_id").focus();
 		document.getElementById("unitfrom_id").value = document.getElementById("display3").innerHTML;
+		document.getElementById("unitfrom_id").blur();
 	}
 	else if (e.value == "05") {
 		document.getElementById("unitfrom_id").focus();
 		document.getElementById("unitfrom_id").value = document.getElementById("display4").innerHTML;
+		document.getElementById("unitfrom_id").blur();
 	}
 	else if (e.value == "06") {
 		document.getElementById("unitfrom_id").focus();
 		document.getElementById("unitfrom_id").value = document.getElementById("display5").innerHTML;
+		document.getElementById("unitfrom_id").blur();
 	}
 	else if (e.value == "07") {
 		document.getElementById("unitfrom_id").focus();
 		document.getElementById("unitfrom_id").value = document.getElementById("display6").innerHTML;
+		document.getElementById("unitfrom_id").blur();
 	}
 	else if (e.value == "08") {
 		document.getElementById("unitfrom_id").focus();
 		document.getElementById("unitfrom_id").value = document.getElementById("display7").innerHTML;
+		document.getElementById("unitfrom_id").blur();
 	}
 	else if (e.value == "09") {
 		document.getElementById("unitfrom_id").focus();
 		document.getElementById("unitfrom_id").value = document.getElementById("display8").innerHTML;
+		document.getElementById("unitfrom_id").blur();
 	}
 	else if (e.value == "10") {
 		document.getElementById("unitfrom_id").focus();
 		document.getElementById("unitfrom_id").value = document.getElementById("display9").innerHTML;
+		document.getElementById("unitfrom_id").blur();
 	}
 }
 

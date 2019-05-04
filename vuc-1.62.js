@@ -592,6 +592,9 @@ function delete_cookie(name) {
 // it creates new cookies (but deleted immediately) of the same name 
 // in our subdomain
 	document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT; domain=.unige.ch; path=/";
+	document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT; domain=unige.ch; path=/"
+	document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT; domain=.mafalda.unige.ch; path=/";
+	document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT; domain=mafalda.unige.ch; path=/";
 }
 
 function getCookie(i) {

@@ -501,7 +501,7 @@ function setCookie() {
 		var temp = document.cookie.replace("unitfrom=","");
 		var nameValueArray = temp.split("-");
 		var boolean = true;
-		if (nameValueArray.length < 11) { // if length < 11 have to check if one of 9 first is the same
+		if (nameValueArray.length < 10) { // if length < 10 have to check if one of 9 first is the same
 			for (var i=0; i < nameValueArray.length; i++) {
 				if (nameValueArray[i] == document.getElementById("unitfrom_id").value) {
 					boolean = false;
@@ -511,7 +511,7 @@ function setCookie() {
 				}
 			}
 		}
-		else { // if length > 11 have to check for the 10 previous by calling function setCookieDifferentUnit
+		else { // if length > 10 have to check for the 10 previous by calling function setCookieDifferentUnit
 			boolean = setCookieDifferentUnit(nameValueArray, nameValueArray.length);
 		}
 		if (boolean == true) { // If boolean == true we add the new unit in the cookie

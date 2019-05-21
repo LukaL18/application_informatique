@@ -58,233 +58,233 @@ function defineUnit(dimension,symbol,value,infos)
 }
 
 // Numbers ("one" must be the first being defined)
-defineUnit([ 0, 0, 0, 0, 0, 0, 0, 0], ["one", "One"], 1, ["Number one", "1", ""])
-defineUnit([ 0, 0, 0, 0, 0, 0, 0, 0], ["%", "percent", "Percent"], 0.01, ["Percent", "1", "percent"])
-defineUnit([ 0, 0, 0, 0, 0, 0, 0, 0], ["alpha", "Alpha"], alpha, ["Fine structure constant", "", ""])
-defineUnit([ 0, 0, 0, 0, 0, 0, 0, 0], ["bit", "Bit", "bits", "Bits"], 1, ["Bit", "1", "bit"])
-defineUnit([ 0, 0, 0, 0, 0, 0, 0, 0], ["byte", "Byte", "bytes", "Bytes", "B"], 8, ["Byte", "8", "bits"])
-defineUnit([ 0, 0, 0, 0, 0, 0, 0, 0], ["ge"], ge, ["Electron g-factor", "", ""])
-defineUnit([ 0, 0, 0, 0, 0, 0, 0, 0], ["gmu"], gmu, ["Muon g-factor", "", ""])
-defineUnit([ 0, 0, 0, 0, 0, 0, 0, 0], ["gn"], gn, ["Neutron g-factor", "", ""])
-defineUnit([ 0, 0, 0, 0, 0, 0, 0, 0], ["gp"], gp, ["Proton g-factor", "", ""])
-defineUnit([ 0, 0, 0, 0, 0, 0, 0, 0], ["pi", "Pi"], pi, ["Number pi", "", ""])
-defineUnit([ 0, 0, 0, 0, 0, 0, 0, 0], ["ppb", "PPB"], 1E-9, ["Part per billion", "10^-9", ""])
-defineUnit([ 0, 0, 0, 0, 0, 0, 0, 0], ["ppm", "PPM"], 1E-6, ["Part per million", "10^-6", ""])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["one", "One"], 1, ["Number one", "1", ""])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["%", "percent", "Percent"], 0.01, ["Percent", "1", "percent"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["alpha", "Alpha"], alpha, ["Fine structure constant", "", ""])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["bit", "Bit", "bits", "Bits"], 1, ["Bit", "1", "bit"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["byte", "Byte", "bytes", "Bytes", "B"], 8, ["Byte", "8", "bits"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["ge"], ge, ["Electron g-factor", "", ""])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["gmu"], gmu, ["Muon g-factor", "", ""])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["gn"], gn, ["Neutron g-factor", "", ""])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["gp"], gp, ["Proton g-factor", "", ""])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["pi", "Pi"], pi, ["Number pi", "", ""])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["ppb", "PPB"], 1E-9, ["Part per billion", "10^-9", ""])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["ppm", "PPM"], 1E-6, ["Part per million", "10^-6", ""])
 // Angle
-defineUnit([ 1, 0, 0, 0, 0, 0, 0, 0], ["arcmin", "arcminute", "'"], (2*pi)/360/60, ["Arc-minute", "1/60", "degree"])
-defineUnit([ 1, 0, 0, 0, 0, 0, 0, 0], ["arcsec", "arcsecond", "''"], (2*pi)/360/3600, ["Arc-second", "1/3600", "degree"])
-defineUnit([ 1, 0, 0, 0, 0, 0, 0, 0], ["deg", "degree", "Degree", "degrees", "Degrees"], (2*pi)/360, ["Degree", "2*Pi/360", "radian"])
-defineUnit([ 1, 0, 0, 0, 0, 0, 0, 0], ["grad", "grade", "grd"], (2*pi)/400, ["Grad", "2*Pi/400", "radian"])
-defineUnit([ 1, 0, 0, 0, 0, 0, 0, 0], ["rad", "radian", "Radian", "radians", "Radians"], 1, ["Radian", "1", "radian"])
+defineUnit([ [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["arcmin", "arcminute", "'"], (2*pi)/360/60, ["Arc-minute", "1/60", "degree"])
+defineUnit([ [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["arcsec", "arcsecond", "''"], (2*pi)/360/3600, ["Arc-second", "1/3600", "degree"])
+defineUnit([ [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["deg", "degree", "Degree", "degrees", "Degrees"], (2*pi)/360, ["Degree", "2*Pi/360", "radian"])
+defineUnit([ [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["grad", "grade", "grd"], (2*pi)/400, ["Grad", "2*Pi/400", "radian"])
+defineUnit([ [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["rad", "radian", "Radian", "radians", "Radians"], 1, ["Radian", "1", "radian"])
 // Length
-defineUnit([ 0, 1, 0, 0, 0, 0, 0, 0], ["a0", "Bohr", "bohr"], alpha/(4*pi*Rinf), ["Bohr radius", "", "Angstrom"])
-defineUnit([ 0, 1, 0, 0, 0, 0, 0, 0], ["Am", "angstrom", "Angstrom"], 1E-10, ["&Aring;ngstr&ouml;m", "10^-10", "meter"])
-defineUnit([ 0, 1, 0, 0, 0, 0, 0, 0], ["AU", "au", "ua"], 1.49597870E+11, ["Astronomical unit", "", "meters"])
-defineUnit([ 0, 1, 0, 0, 0, 0, 0, 0], ["Fm", "fm", "Fermi", "fermi"], 1E-15, ["Fermi", "1", "femtometer"])
-defineUnit([ 0, 1, 0, 0, 0, 0, 0, 0], ["ft", "foot", "Foot", "feet", "Feet"], 1200/3937, ["Foot", "1200/3937", "meter"])
-defineUnit([ 0, 1, 0, 0, 0, 0, 0, 0], ["fth", "fath", "fathom"], 6*1200/3937, ["Fathom", "6", "feet"])
-defineUnit([ 0, 1, 0, 0, 0, 0, 0, 0], ["fur", "furlong", "furlongs"], 220*3*1200/3937, ["Furlong", "220", "yard"])
-defineUnit([ 0, 1, 0, 0, 0, 0, 0, 0], ["in", "inch"], 100/3937, ["Inch", "1/12", "Foot"])
-defineUnit([ 0, 1, 0, 0, 0, 0, 0, 0], ["lambdaCe"], h/(me*c), ["Electron Compton wavelength", "h/(m<SUB>electron</SUB>c)", "&nbsp;&nbsp;[&nbsp;2426.3 Fermi&nbsp;]"])
-defineUnit([ 0, 1, 0, 0, 0, 0, 0, 0], ["lambdaCmu"], h/(mmu*c), ["Muon Compton wavelength", "h/(m<SUB>muon</SUB>c)", "&nbsp;&nbsp;[&nbsp;11.734 Fermi&nbsp;]"])
-defineUnit([ 0, 1, 0, 0, 0, 0, 0, 0], ["lambdaCn"], h/(mn*c), ["Neutron Compton wavelength", "h/(m<SUB>neutron</SUB>c)", "&nbsp;&nbsp;[&nbsp;1.3196 Fermi&nbsp;]"])
-defineUnit([ 0, 1, 0, 0, 0, 0, 0, 0], ["lambdaCp"], h/(mp*c), ["Proton Compton wavelength", "h/(m<SUB>proton</SUB>c)", "&nbsp;&nbsp;[&nbsp;1.3214 Fermi&nbsp;]"])
-defineUnit([ 0, 1, 0, 0, 0, 0, 0, 0], ["lP"], Math.pow(h/(2*pi)*GN/Math.pow(c,3),0.5), ["Planck length", "", ""])
-defineUnit([ 0, 1, 0, 0, 0, 0, 0, 0], ["lr"], h/(2*pi)/(me*c), ["Length unit in the relativistic system", "", ""])
-defineUnit([ 0, 1, 0, 0, 0, 0, 0, 0], ["ly"], 9.46089521E+15, ["Light year", "", "meters"])
-defineUnit([ 0, 1, 0, 0, 0, 0, 0, 0], ["m", "meter", "Meter", "meters", "Meters"], 1, ["Meter", "1", "meter"])
-defineUnit([ 0, 1, 0, 0, 0, 0, 0, 0], ["mi", "mile", "Mile", "miles", "Miles"], 5280*1200/3937, ["Statute mile", "5280", "feet"])
-defineUnit([ 0, 1, 0, 0, 0, 0, 0, 0], ["micron", "Micron"], 1E-6, ["Micron", "10^-6", "meter"])
-defineUnit([ 0, 1, 0, 0, 0, 0, 0, 0], ["nmi", "naut", "NM"], 1852, ["International nautical mile", "1852", "meters"])
-defineUnit([ 0, 1, 0, 0, 0, 0, 0, 0], ["pc", "psc", "parsec"], 206264.8*1.49597870E+11, ["Parsec", "206264.8", "AU"])
-defineUnit([ 0, 1, 0, 0, 0, 0, 0, 0], ["re"], Math.pow(alpha,3)/(4*pi*Rinf), ["Classical electron radius", "", "Fermi"])
-defineUnit([ 0, 1, 0, 0, 0, 0, 0, 0], ["yd", "yard"], 3*1200/3937, ["Yard", "3", "feet"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["a0", "Bohr", "bohr"], alpha/(4*pi*Rinf), ["Bohr radius", "", "Angstrom"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["Am", "angstrom", "Angstrom"], 1E-10, ["&Aring;ngstr&ouml;m", "10^-10", "meter"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["AU", "au", "ua"], 1.49597870E+11, ["Astronomical unit", "", "meters"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["Fm", "fm", "Fermi", "fermi"], 1E-15, ["Fermi", "1", "femtometer"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["ft", "foot", "Foot", "feet", "Feet"], 1200/3937, ["Foot", "1200/3937", "meter"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["fth", "fath", "fathom"], 6*1200/3937, ["Fathom", "6", "feet"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["fur", "furlong", "furlongs"], 220*3*1200/3937, ["Furlong", "220", "yard"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["in", "inch"], 100/3937, ["Inch", "1/12", "Foot"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["lambdaCe"], h/(me*c), ["Electron Compton wavelength", "h/(m<SUB>electron</SUB>c)", "&nbsp;&nbsp;[&nbsp;2426.3 Fermi&nbsp;]"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["lambdaCmu"], h/(mmu*c), ["Muon Compton wavelength", "h/(m<SUB>muon</SUB>c)", "&nbsp;&nbsp;[&nbsp;11.734 Fermi&nbsp;]"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["lambdaCn"], h/(mn*c), ["Neutron Compton wavelength", "h/(m<SUB>neutron</SUB>c)", "&nbsp;&nbsp;[&nbsp;1.3196 Fermi&nbsp;]"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["lambdaCp"], h/(mp*c), ["Proton Compton wavelength", "h/(m<SUB>proton</SUB>c)", "&nbsp;&nbsp;[&nbsp;1.3214 Fermi&nbsp;]"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["lP"], Math.pow(h/(2*pi)*GN/Math.pow(c,3),0.5), ["Planck length", "", ""])
+defineUnit([ [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["lr"], h/(2*pi)/(me*c), ["Length unit in the relativistic system", "", ""])
+defineUnit([ [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["ly"], 9.46089521E+15, ["Light year", "", "meters"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["m", "meter", "Meter", "meters", "Meters"], 1, ["Meter", "1", "meter"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["mi", "mile", "Mile", "miles", "Miles"], 5280*1200/3937, ["Statute mile", "5280", "feet"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["micron", "Micron"], 1E-6, ["Micron", "10^-6", "meter"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["nmi", "naut", "NM"], 1852, ["International nautical mile", "1852", "meters"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["pc", "psc", "parsec"], 206264.8*1.49597870E+11, ["Parsec", "206264.8", "AU"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["re"], Math.pow(alpha,3)/(4*pi*Rinf), ["Classical electron radius", "", "Fermi"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["yd", "yard"], 3*1200/3937, ["Yard", "3", "feet"])
 // Mass
-defineUnit([ 0, 0, 1, 0, 0, 0, 0, 0], ["ct", "carat"], 2E-4, ["Metrical carat", "200", "milligrams"])
-defineUnit([ 0, 0, 1, 0, 0, 0, 0, 0], ["fir", "firkin", "firkins"], 90*0.45359237, ["Firkin", "90", "pounds"])
-defineUnit([ 0, 0, 1, 0, 0, 0, 0, 0], ["g", "gram", "Gram", "grams", "Grams"], 0.001, ["Gram", "10^-3", "kilogram"])
-defineUnit([ 0, 0, 1, 0, 0, 0, 0, 0], ["gr", "grain", "grains", "Grain", "Grains"], 0.45359237/7000, ["Grain", "1/7000", "pound"])
-defineUnit([ 0, 0, 1, 0, 0, 0, 0, 0], ["kg", "kilogram"], 1, ["Kilogram", "1", "kilogram"])
-defineUnit([ 0, 0, 1, 0, 0, 0, 0, 0], ["lb", "lbs", "lbm", "lbsm", "#", "pound", "pounds"], 0.45359237, ["Pound", "453.59237", "grams"])
-defineUnit([ 0, 0, 1, 0, 0, 0, 0, 0], ["MA"], Math.pow(h/(2*pi),2)/q*1E20, ["Mass unit in the Angstrom-eV system", "", ""])
-defineUnit([ 0, 0, 1, 0, 0, 0, 0, 0], ["me", "electron"], me, ["Electron mass", "", ""])
-defineUnit([ 0, 0, 1, 0, 0, 0, 0, 0], ["mmu", "muon"], mmu, ["Muon mass", "", ""])
-defineUnit([ 0, 0, 1, 0, 0, 0, 0, 0], ["mn", "neutron"], mn, ["Neutron mass", "", ""])
-defineUnit([ 0, 0, 1, 0, 0, 0, 0, 0], ["mp", "proton"], mp, ["Proton mass", "", ""])
-defineUnit([ 0, 0, 1, 0, 0, 0, 0, 0], ["mP"], Math.pow(h/(2*pi)*c/GN,0.5), ["Planck mass", "", ""])
-defineUnit([ 0, 0, 1, 0, 0, 0, 0, 0], ["oz", "ounce"], 0.45359237/16, ["Avoirdupois ounce", "1/16", "pound"])
-defineUnit([ 0, 0, 1, 0, 0, 0, 0, 0], ["slug", "Slug", "slugs", "Slugs"], 0.45359237*9.80665/1200*3937, ["Slug", "1", "lbf s^2/foot"])
-defineUnit([ 0, 0, 1, 0, 0, 0, 0, 0], ["st", "stone"], 14*0.45359237, ["Stone", "14", "pounds"])
-defineUnit([ 0, 0, 1, 0, 0, 0, 0, 0], ["Sun"], 1.9891E30, ["Solar mass", "", ""])
-defineUnit([ 0, 0, 1, 0, 0, 0, 0, 0], ["t", "tonne", "tonnes"], 1000, ["Ton", "1000", "kilograms"])
-defineUnit([ 0, 0, 1, 0, 0, 0, 0, 0], ["t.long"], 2240*0.45359237, ["Long ton", "2240", "pounds"])
-defineUnit([ 0, 0, 1, 0, 0, 0, 0, 0], ["t.short"], 2000*0.45359237, ["Short ton", "2000", "pounds"])
-defineUnit([ 0, 0, 1, 0, 0, 0, 0, 0], ["tlb", "lbt", "lb.t"], 5.760*0.06479891, ["Troy pound", "", ""])
-defineUnit([ 0, 0, 1, 0, 0, 0, 0, 0], ["toz", "ozt", "oz.t"], 5.760*0.06479891/12, ["Troy ounce", "1/12", "troy pound"])
-defineUnit([ 0, 0, 1, 0, 0, 0, 0, 0], ["u", "amu", "dalton", "Da"], u, ["Atomic mass unit", "", ""])
+defineUnit([ [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["ct", "carat"], 2E-4, ["Metrical carat", "200", "milligrams"])
+defineUnit([ [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["fir", "firkin", "firkins"], 90*0.45359237, ["Firkin", "90", "pounds"])
+defineUnit([ [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["g", "gram", "Gram", "grams", "Grams"], 0.001, ["Gram", "10^-3", "kilogram"])
+defineUnit([ [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["gr", "grain", "grains", "Grain", "Grains"], 0.45359237/7000, ["Grain", "1/7000", "pound"])
+defineUnit([ [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["kg", "kilogram"], 1, ["Kilogram", "1", "kilogram"])
+defineUnit([ [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["lb", "lbs", "lbm", "lbsm", "#", "pound", "pounds"], 0.45359237, ["Pound", "453.59237", "grams"])
+defineUnit([ [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["MA"], Math.pow(h/(2*pi),2)/q*1E20, ["Mass unit in the Angstrom-eV system", "", ""])
+defineUnit([ [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["me", "electron"], me, ["Electron mass", "", ""])
+defineUnit([ [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["mmu", "muon"], mmu, ["Muon mass", "", ""])
+defineUnit([ [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["mn", "neutron"], mn, ["Neutron mass", "", ""])
+defineUnit([ [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["mp", "proton"], mp, ["Proton mass", "", ""])
+defineUnit([ [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["mP"], Math.pow(h/(2*pi)*c/GN,0.5), ["Planck mass", "", ""])
+defineUnit([ [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["oz", "ounce"], 0.45359237/16, ["Avoirdupois ounce", "1/16", "pound"])
+defineUnit([ [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["slug", "Slug", "slugs", "Slugs"], 0.45359237*9.80665/1200*3937, ["Slug", "1", "lbf s^2/foot"])
+defineUnit([ [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["st", "stone"], 14*0.45359237, ["Stone", "14", "pounds"])
+defineUnit([ [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["Sun"], 1.9891E30, ["Solar mass", "", ""])
+defineUnit([ [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["t", "tonne", "tonnes"], 1000, ["Ton", "1000", "kilograms"])
+defineUnit([ [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["t.long"], 2240*0.45359237, ["Long ton", "2240", "pounds"])
+defineUnit([ [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["t.short"], 2000*0.45359237, ["Short ton", "2000", "pounds"])
+defineUnit([ [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["tlb", "lbt", "lb.t"], 5.760*0.06479891, ["Troy pound", "", ""])
+defineUnit([ [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["toz", "ozt", "oz.t"], 5.760*0.06479891/12, ["Troy ounce", "1/12", "troy pound"])
+defineUnit([ [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["u", "amu", "dalton", "Da"], u, ["Atomic mass unit", "", ""])
 // Time
-defineUnit([ 0, 0, 0, 1, 0, 0, 0, 0], ["day", "days", "Day", "Days"], 24*3600, ["Day", "24", "hours"])
-defineUnit([ 0, 0, 0, 1, 0, 0, 0, 0], ["for", "forthight", "forthights"], 14*24*3600, ["Fortnight", "14", "days"])
-defineUnit([ 0, 0, 0, 1, 0, 0, 0, 0], ["hr", "hour", "hours", "Hour", "Hours"], 3600, ["Hour", "60", "minutes"])
-defineUnit([ 0, 0, 0, 1, 0, 0, 0, 0], ["min", "minute", "minutes", "Minute", "Minutes"], 60, ["Minute", "60", "seconds"])
-defineUnit([ 0, 0, 0, 1, 0, 0, 0, 0], ["month", "Month"], 365*24*3600/12, ["Month", "1/12", "year"])
-defineUnit([ 0, 0, 0, 1, 0, 0, 0, 0], ["s", "sec", "second", "seconds", "Second", "Seconds"], 1, ["Second", "1", "second"])
-defineUnit([ 0, 0, 0, 1, 0, 0, 0, 0], ["s.year"], 365.25636*24*3600, ["Sideral year", "365.25636", "days"])
-defineUnit([ 0, 0, 0, 1, 0, 0, 0, 0], ["t0"], Math.pow(h/(2*pi),3)/me/Math.pow(c*q,4)*1E+14, ["Time unit in the atomic units system", "", ""])
-defineUnit([ 0, 0, 0, 1, 0, 0, 0, 0], ["tA"], h/(2*pi)/q, ["Time unit in the Angstrom-eV system", "", ""])
-defineUnit([ 0, 0, 0, 1, 0, 0, 0, 0], ["tP"], Math.pow(h/(2*pi)*GN/Math.pow(c,5),0.5), ["Planck time", "", ""])
-defineUnit([ 0, 0, 0, 1, 0, 0, 0, 0], ["tr"], h/(2*pi)/(me*Math.pow(c,2)), ["Time unit in the relativistic system", "", ""])
-defineUnit([ 0, 0, 0, 1, 0, 0, 0, 0], ["week", "weeks", "Week", "Weeks"], 7*24*3600, ["Week", "7", "days"])
-defineUnit([ 0, 0, 0, 1, 0, 0, 0, 0], ["year", "years", "Year", "Years"], 365*24*3600, ["Year", "365", "days"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["day", "days", "Day", "Days"], 24*3600, ["Day", "24", "hours"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["for", "forthight", "forthights"], 14*24*3600, ["Fortnight", "14", "days"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["hr", "hour", "hours", "Hour", "Hours"], 3600, ["Hour", "60", "minutes"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["min", "minute", "minutes", "Minute", "Minutes"], 60, ["Minute", "60", "seconds"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["month", "Month"], 365*24*3600/12, ["Month", "1/12", "year"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["s", "sec", "second", "seconds", "Second", "Seconds"], 1, ["Second", "1", "second"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["s.year"], 365.25636*24*3600, ["Sideral year", "365.25636", "days"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["t0"], Math.pow(h/(2*pi),3)/me/Math.pow(c*q,4)*1E+14, ["Time unit in the atomic units system", "", ""])
+defineUnit([ [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["tA"], h/(2*pi)/q, ["Time unit in the Angstrom-eV system", "", ""])
+defineUnit([ [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["tP"], Math.pow(h/(2*pi)*GN/Math.pow(c,5),0.5), ["Planck time", "", ""])
+defineUnit([ [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["tr"], h/(2*pi)/(me*Math.pow(c,2)), ["Time unit in the relativistic system", "", ""])
+defineUnit([ [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["week", "weeks", "Week", "Weeks"], 7*24*3600, ["Week", "7", "days"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["year", "years", "Year", "Years"], 365*24*3600, ["Year", "365", "days"])
 // Electric current
-defineUnit([ 0, 0, 0, 0, 1, 0, 0, 0], ["A", "amp", "Ampere", "ampere", "Amperes", "amperes"], 1, ["Amp&egrave;re", "1", "Ampere"])
-defineUnit([ 0, 0, 0, 0, 1, 0, 0, 0], ["Bi", "Biot", "biot"], 10, ["Biot", "10", "Ampere"])
-defineUnit([ 0, 0, 0, 0, 1, 0, 0, 0], ["Gi", "Gilbert", "gilbert"], 10/(4*pi), ["Gilbert", "1/(4*Pi)", "Biot"])
-defineUnit([ 0, 0, 0, 0, 1, 0, 0, 0], ["I0"], me/Math.pow(h/(2*pi),3)*Math.pow(c*q,4)*q*1E-14, ["Current unit in the atomic units", "", ""])
-defineUnit([ 0, 0, 0, 0, 1, 0, 0, 0], ["IA"], Math.pow(q,2)*(2*pi)/h, ["Current unit in the Angstrom-eV system", "", ""])
-defineUnit([ 0, 0, 0, 0, 1, 0, 0, 0], ["IP"], q*Math.pow(Math.pow(c,5)/h*(2*pi)/GN,0.5), ["Current unit in the Planck system", "", ""])
-defineUnit([ 0, 0, 0, 0, 1, 0, 0, 0], ["Ir"], me*Math.pow(c,2)*q/(h/(2*pi)), ["Current unit in the relativistic system", "", ""])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1]], ["A", "amp", "Ampere", "ampere", "Amperes", "amperes"], 1, ["Amp&egrave;re", "1", "Ampere"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1]], ["Bi", "Biot", "biot"], 10, ["Biot", "10", "Ampere"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1]], ["Gi", "Gilbert", "gilbert"], 10/(4*pi), ["Gilbert", "1/(4*Pi)", "Biot"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1]], ["I0"], me/Math.pow(h/(2*pi),3)*Math.pow(c*q,4)*q*1E-14, ["Current unit in the atomic units", "", ""])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1]], ["IA"], Math.pow(q,2)*(2*pi)/h, ["Current unit in the Angstrom-eV system", "", ""])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1]], ["IP"], q*Math.pow(Math.pow(c,5)/h*(2*pi)/GN,0.5), ["Current unit in the Planck system", "", ""])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1]], ["Ir"], me*Math.pow(c,2)*q/(h/(2*pi)), ["Current unit in the relativistic system", "", ""])
 // Temperature
-defineUnit([ 0, 0, 0, 0, 0, 1, 0, 0], ["K", "Kelvin", "kelvin"], 1, ["Kelvin", "1", "Kelvin"])
-defineUnit([ 0, 0, 0, 0, 0, 1, 0, 0], ["oR", "Ra", "Rankine", "rankine"], 5/9, ["Rankine", "5/9", "Kelvin"])
-defineUnit([ 0, 0, 0, 0, 0, 1, 0, 0], ["oC", "Celsius", "celsius", "Centigrade", "centigrade"], 1, ["Celsius", "1", "Kelvin&nbsp;&nbsp;[&nbsp;-273.15&nbsp;]"])
-defineUnit([ 0, 0, 0, 0, 0, 1, 0, 0], ["oF", "Fahrenheit", "fahrenheit"], 5/9, ["Fahrenheit", "5/9", "Kelvin&nbsp;&nbsp;[&nbsp;-459.67&nbsp;]"])
-defineUnit([ 0, 0, 0, 0, 0, 1, 0, 0], ["T_P"], Math.pow(h/(2*pi)*Math.pow(c,5)/GN,0.5)/R*Na, ["Planck temperature", "", "Kelvin"])
-defineUnit([ 0, 0, 0, 0, 0, 1, 0, 0], ["TA"], q/R*Na, ["Temperature unit in the Angstrom-eV system", "", ""])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1]], ["K", "Kelvin", "kelvin"], 1, ["Kelvin", "1", "Kelvin"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1]], ["oR", "Ra", "Rankine", "rankine"], 5/9, ["Rankine", "5/9", "Kelvin"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1]], ["oC", "Celsius", "celsius", "Centigrade", "centigrade"], 1, ["Celsius", "1", "Kelvin&nbsp;&nbsp;[&nbsp;-273.15&nbsp;]"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1]], ["oF", "Fahrenheit", "fahrenheit"], 5/9, ["Fahrenheit", "5/9", "Kelvin&nbsp;&nbsp;[&nbsp;-459.67&nbsp;]"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1]], ["T_P"], Math.pow(h/(2*pi)*Math.pow(c,5)/GN,0.5)/R*Na, ["Planck temperature", "", "Kelvin"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1]], ["TA"], q/R*Na, ["Temperature unit in the Angstrom-eV system", "", ""])
 // Luminous intensity
-defineUnit([ 0, 0, 0, 0, 0, 0, 1, 0], ["cd", "candela", "candelas"], 1, ["Candela", "1", "candela"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [1, 1], [0, 1]], ["cd", "candela", "candelas"], 1, ["Candela", "1", "candela"])
 // Quantity of matter
-defineUnit([ 0, 0, 0, 0, 0, 0, 0, 1], ["mol", "Mole", "mole", "Moles", "moles"], 1, ["Mole", "1", "Mole"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [1, 1]], ["mol", "Mole", "mole", "Moles", "moles"], 1, ["Mole", "1", "Mole"])
 // Solid angle
-defineUnit([ 2, 0, 0, 0, 0, 0, 0, 0], ["sterad", "steradian", "Steradian", "steradians", "Steradians"], 1, ["Steradian", "1", "Radian^2"])
+defineUnit([ [2, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["sterad", "steradian", "Steradian", "steradians", "Steradians"], 1, ["Steradian", "1", "Radian^2"])
 // Inverse Length
-defineUnit([ 0,-1, 0, 0, 0, 0, 0, 0], ["d", "dpt", "diopter", "dioptre"], 1, ["Diopter", "1", "Meter^-1"])
-defineUnit([ 0,-1, 0, 0, 0, 0, 0, 0], ["Rinf"], Rinf, ["Rydberg constant", "", ""])
+defineUnit([ [0, 1], [-1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["d", "dpt", "diopter", "dioptre"], 1, ["Diopter", "1", "Meter^-1"])
+defineUnit([ [0, 1], [-1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["Rinf"], Rinf, ["Rydberg constant", "", ""])
 // Area
-defineUnit([ 0, 2, 0, 0, 0, 0, 0, 0], ["acre", "ac", "acres"], 43560*Math.pow(1200/3937,2), ["Acre", "43560", "feet^2"])
-defineUnit([ 0, 2, 0, 0, 0, 0, 0, 0], ["are", "a", "ares"], 100, ["Are", "100",  ""])
-defineUnit([ 0, 2, 0, 0, 0, 0, 0, 0], ["b", "barn", "barns"], 1E-28, ["Barn", "10^-28",  ""])
-defineUnit([ 0, 2, 0, 0, 0, 0, 0, 0], ["sigmae"], 1/(6*pi)*Math.pow(alpha,6)/Math.pow(Rinf,2), ["Electron Thomson cross section", "", ""])
+defineUnit([ [0, 1], [2, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["acre", "ac", "acres"], 43560*Math.pow(1200/3937,2), ["Acre", "43560", "feet^2"])
+defineUnit([ [0, 1], [2, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["are", "a", "ares"], 100, ["Are", "100",  ""])
+defineUnit([ [0, 1], [2, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["b", "barn", "barns"], 1E-28, ["Barn", "10^-28",  ""])
+defineUnit([ [0, 1], [2, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["sigmae"], 1/(6*pi)*Math.pow(alpha,6)/Math.pow(Rinf,2), ["Electron Thomson cross section", "", ""])
 // Volume
-defineUnit([ 0, 3, 0, 0, 0, 0, 0, 0], ["bbl", "bo", "barrel", "barrels"], 42*231*Math.pow(100/3937,3), ["US barrel", "42", "USgallon"])
-defineUnit([ 0, 3, 0, 0, 0, 0, 0, 0], ["cup"], 231*Math.pow(100/3937,3)/16, ["Cup", "1/2", "US pint"])
-defineUnit([ 0, 3, 0, 0, 0, 0, 0, 0], ["l", "liter", "Liter", "liters", "Liters", "ltr"], 0.001, ["Liter", "1", "liter"])
-defineUnit([ 0, 3, 0, 0, 0, 0, 0, 0], ["UKfloz"], 4.54609E-3/8/20, ["Imperial fluid ounce", "1/20", "Imperial pint"])
-defineUnit([ 0, 3, 0, 0, 0, 0, 0, 0], ["UKgl", "UKgal", "UKgallon"], 4.54609E-3, ["Imperial gallon", "", "liters"])
-defineUnit([ 0, 3, 0, 0, 0, 0, 0, 0], ["UKpt", "UKpint"], 4.54609E-3/8, ["Imperial pint", "1/8", "Imperial gallon"])
-defineUnit([ 0, 3, 0, 0, 0, 0, 0, 0], ["UKqt", "UKquart"], 4.54609E-3/4, ["Imperial quart", "1/4", "Imperial gallon"])
-defineUnit([ 0, 3, 0, 0, 0, 0, 0, 0], ["USfloz", "floz"], 231*Math.pow(100/3937,3)/8/16, ["US fluid ounce", "1/16", "US pint"])
-defineUnit([ 0, 3, 0, 0, 0, 0, 0, 0], ["USgl", "USgal", "USgallon", "gallon", "gallons"], 231*Math.pow(100/3937,3), ["US gallon", "231", "inch^3"])
-defineUnit([ 0, 3, 0, 0, 0, 0, 0, 0], ["USpt", "USpint", "pint"], 231*Math.pow(100/3937,3)/8, ["US pint", "1/8", "US gallon"])
-defineUnit([ 0, 3, 0, 0, 0, 0, 0, 0], ["USqt", "USquart", "qt", "quart"], 231*Math.pow(100/3937,3)/4, ["US quart", "1/4", "US gallon"])
+defineUnit([ [0, 1], [3, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["bbl", "bo", "barrel", "barrels"], 42*231*Math.pow(100/3937,3), ["US barrel", "42", "USgallon"])
+defineUnit([ [0, 1], [3, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["cup"], 231*Math.pow(100/3937,3)/16, ["Cup", "1/2", "US pint"])
+defineUnit([ [0, 1], [3, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["l", "liter", "Liter", "liters", "Liters", "ltr"], 0.001, ["Liter", "1", "liter"])
+defineUnit([ [0, 1], [3, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["UKfloz"], 4.54609E-3/8/20, ["Imperial fluid ounce", "1/20", "Imperial pint"])
+defineUnit([ [0, 1], [3, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["UKgl", "UKgal", "UKgallon"], 4.54609E-3, ["Imperial gallon", "", "liters"])
+defineUnit([ [0, 1], [3, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["UKpt", "UKpint"], 4.54609E-3/8, ["Imperial pint", "1/8", "Imperial gallon"])
+defineUnit([ [0, 1], [3, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["UKqt", "UKquart"], 4.54609E-3/4, ["Imperial quart", "1/4", "Imperial gallon"])
+defineUnit([ [0, 1], [3, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["USfloz", "floz"], 231*Math.pow(100/3937,3)/8/16, ["US fluid ounce", "1/16", "US pint"])
+defineUnit([ [0, 1], [3, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["USgl", "USgal", "USgallon", "gallon", "gallons"], 231*Math.pow(100/3937,3), ["US gallon", "231", "inch^3"])
+defineUnit([ [0, 1], [3, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["USpt", "USpint", "pint"], 231*Math.pow(100/3937,3)/8, ["US pint", "1/8", "US gallon"])
+defineUnit([ [0, 1], [3, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["USqt", "USquart", "qt", "quart"], 231*Math.pow(100/3937,3)/4, ["US quart", "1/4", "US gallon"])
 // Fuel consumption
-defineUnit([ 0,-2, 0, 0, 0, 0, 0, 0], ["kpl"], 1000000, ["Kilometer per liter", "1", "km/l"])
-defineUnit([ 0,-2, 0, 0, 0, 0, 0, 0], ["mpg"], 5280*1200/3937/4.54609E-3, ["Mile per gallon (UK)", "1", "mile/UKgallon"])
+defineUnit([ [0, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["kpl"], 1000000, ["Kilometer per liter", "1", "km/l"])
+defineUnit([ [0, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["mpg"], 5280*1200/3937/4.54609E-3, ["Mile per gallon (UK)", "1", "mile/UKgallon"])
 // Frequency
-defineUnit([ 0, 0, 0,-1, 0, 0, 0, 0], ["bps"], 1, ["Bit per second", "1", "bit/sec"])
-defineUnit([ 0, 0, 0,-1, 0, 0, 0, 0], ["Bq", "Becquerel"], 1, ["Becquerel", "1", ""])
-defineUnit([ 0, 0, 0,-1, 0, 0, 0, 0], ["Ci", "Curie", "curie"], 3.7E+10, ["Curie", "37", "GigaBecquerel"])
-defineUnit([ 0, 0, 0,-1, 0, 0, 0, 0], ["dpm"], 1/60, ["Disintegration per minute", "1/60", "Becquerel"])
-defineUnit([ 0, 0, 0,-1, 0, 0, 0, 0], ["Hz", "Hertz", "hertz"], 1, ["Hertz", "1", ""])
-defineUnit([ 0, 0, 0,-1, 0, 0, 0, 0], ["Ru", "Rutherford", "rutherford"], 1E+6, ["Rutherford", "1", "MegaBecquerel"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [-1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["bps"], 1, ["Bit per second", "1", "bit/sec"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [-1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["Bq", "Becquerel"], 1, ["Becquerel", "1", ""])
+defineUnit([ [0, 1], [0, 1], [0, 1], [-1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["Ci", "Curie", "curie"], 3.7E+10, ["Curie", "37", "GigaBecquerel"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [-1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["dpm"], 1/60, ["Disintegration per minute", "1/60", "Becquerel"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [-1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["Hz", "Hertz", "hertz"], 1, ["Hertz", "1", ""])
+defineUnit([ [0, 1], [0, 1], [0, 1], [-1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["Ru", "Rutherford", "rutherford"], 1E+6, ["Rutherford", "1", "MegaBecquerel"])
 // Velocity
-defineUnit([ 0, 1, 0,-1, 0, 0, 0, 0], ["c"], c, ["Speed of light in vacuum", "", "m/s"])
-defineUnit([ 0, 1, 0,-1, 0, 0, 0, 0], ["kn", "kt", "knot"], 1852/3600, ["Nautical mile per hour", "1", "naut/hour"])
-defineUnit([ 0, 1, 0,-1, 0, 0, 0, 0], ["kph"], 1000/3600, ["Kilometer per hour", "1", "kilometer/hour"])
-defineUnit([ 0, 1, 0,-1, 0, 0, 0, 0], ["M", "Ma", "Mach", "mach"], 340, ["Mach", "340", "m/s"])
-defineUnit([ 0, 1, 0,-1, 0, 0, 0, 0], ["mph"], 5280*1200/3937/3600, ["Mile per hour", "1", "mile/hour"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [-1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["c"], c, ["Speed of light in vacuum", "", "m/s"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [-1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["kn", "kt", "knot"], 1852/3600, ["Nautical mile per hour", "1", "naut/hour"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [-1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["kph"], 1000/3600, ["Kilometer per hour", "1", "kilometer/hour"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [-1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["M", "Ma", "Mach", "mach"], 340, ["Mach", "340", "m/s"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [-1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["mph"], 5280*1200/3937/3600, ["Mile per hour", "1", "mile/hour"])
 // Volumetric debit
-defineUnit([ 0, 3, 0,-1, 0, 0, 0, 0], ["sccs", "SCCS"], 1E-6, ["Standard cubic centimeter per second", "", "cm^3/sec"])
-defineUnit([ 0, 3, 0,-1, 0, 0, 0, 0], ["sccm", "SCCM"], 1E-6/60, ["Standard cubic centimeter per minute", "", "cm^3/min"])
+defineUnit([ [0, 1], [3, 1], [0, 1], [-1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["sccs", "SCCS"], 1E-6, ["Standard cubic centimeter per second", "", "cm^3/sec"])
+defineUnit([ [0, 1], [3, 1], [0, 1], [-1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["sccm", "SCCM"], 1E-6/60, ["Standard cubic centimeter per minute", "", "cm^3/min"])
 // Flux density
-defineUnit([ 0, 0, 1,-2, 0, 0, 0, 0], ["Jy", "Jansky", "jansky"], 1E-26, ["Jansky", "10^-26", "Watt/m^2/Hertz"])
-defineUnit([ 0, 0, 1,-2, 0, 0, 0, 0], ["Ly", "Langley", "langley"], 41840, ["Langley", "1", "Thermochemical calorie/cm^2"])
+defineUnit([ [0, 1], [0, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["Jy", "Jansky", "jansky"], 1E-26, ["Jansky", "10^-26", "Watt/m^2/Hertz"])
+defineUnit([ [0, 1], [0, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["Ly", "Langley", "langley"], 41840, ["Langley", "1", "Thermochemical calorie/cm^2"])
 // Charge
-defineUnit([ 0, 0, 0, 1, 1, 0, 0, 0], ["C", "Cb", "Coulomb", "coulomb", "Coulombs", "coulombs"], 1, ["Coulomb", "1", "Coulomb"])
-defineUnit([ 0, 0, 0, 1, 1, 0, 0, 0], ["Fr", "Franklin", "franklin", "statcoulomb"], 0.1/c, ["Franklin", "0.1/c", "Coulomb"])
-defineUnit([ 0, 0, 0, 1, 1, 0, 0, 0], ["q", "e"], q, ["Elementary charge", "1", "Electron charge&nbsp;&nbsp;[&nbsp;1.6022 * 10^-19 Coulomb&nbsp;]"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [1, 1], [1, 1], [0, 1], [0, 1], [0, 1]], ["C", "Cb", "Coulomb", "coulomb", "Coulombs", "coulombs"], 1, ["Coulomb", "1", "Coulomb"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [1, 1], [1, 1], [0, 1], [0, 1], [0, 1]], ["Fr", "Franklin", "franklin", "statcoulomb"], 0.1/c, ["Franklin", "0.1/c", "Coulomb"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [1, 1], [1, 1], [0, 1], [0, 1], [0, 1]], ["q", "e"], q, ["Elementary charge", "1", "Electron charge&nbsp;&nbsp;[&nbsp;1.6022 * 10^-19 Coulomb&nbsp;]"])
 // Light flux
-defineUnit([ 2, 0, 0, 0, 0, 0, 1, 0], ["lm", "lumen", "lumens"], 1, ["Lumen", "1", "candela steradian"])
+defineUnit([ [2, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [1, 1], [0, 1]], ["lm", "lumen", "lumens"], 1, ["Lumen", "1", "candela steradian"])
 // Luminance
-defineUnit([ 2,-2, 0, 0, 0, 0, 1, 0], ["fc", "ftc", "footcandle", "footcandles", "Footcandle", "Footcandles"], Math.pow(3937/1200,2), ["footcandle", "1", "lumen/foot^2"])
-defineUnit([ 2,-2, 0, 0, 0, 0, 1, 0], ["lx", "lux", "Lux"], 1, ["Lux", "1", "lumen/m^2"])
-defineUnit([ 2,-2, 0, 0, 0, 0, 1, 0], ["ph", "phot", "Phot"], 1E4, ["Phot", "1", "lumen/cm^2"])
+defineUnit([ [2, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1], [1, 1], [0, 1]], ["fc", "ftc", "footcandle", "footcandles", "Footcandle", "Footcandles"], Math.pow(3937/1200,2), ["footcandle", "1", "lumen/foot^2"])
+defineUnit([ [2, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1], [1, 1], [0, 1]], ["lx", "lux", "Lux"], 1, ["Lux", "1", "lumen/m^2"])
+defineUnit([ [2, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1], [1, 1], [0, 1]], ["ph", "phot", "Phot"], 1E4, ["Phot", "1", "lumen/cm^2"])
 // Force
-defineUnit([ 0, 1, 1,-2, 0, 0, 0, 0], ["dyn", "dyne"], 1E-5, ["Dyne", "10^-5", "Newton"])
-defineUnit([ 0, 1, 1,-2, 0, 0, 0, 0], ["kgf", "kilopond"], 9.80665, ["Kilogram force", "", "Newton"])
-defineUnit([ 0, 1, 1,-2, 0, 0, 0, 0], ["lbf", "lbsf"], 0.45359237*9.80665, ["Pound force", "", "Newton"])
-defineUnit([ 0, 1, 1,-2, 0, 0, 0, 0], ["N", "Newton", "newton", "Newtons", "newtons"], 1, ["Newton", "1", "Newton"])
+defineUnit([ [0, 1], [1, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["dyn", "dyne"], 1E-5, ["Dyne", "10^-5", "Newton"])
+defineUnit([ [0, 1], [1, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["kgf", "kilopond"], 9.80665, ["Kilogram force", "", "Newton"])
+defineUnit([ [0, 1], [1, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["lbf", "lbsf"], 0.45359237*9.80665, ["Pound force", "", "Newton"])
+defineUnit([ [0, 1], [1, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["N", "Newton", "newton", "Newtons", "newtons"], 1, ["Newton", "1", "Newton"])
 // Energy
-defineUnit([ 0, 2, 1,-2, 0, 0, 0, 0], ["BTU", "btu"], 1.05505585262E3, ["British Thermal Unit", "", "KiloJoule"])
-defineUnit([ 0, 2, 1,-2, 0, 0, 0, 0], ["cal", "calorie", "Calorie", "calories", "Calories"], 4.1868, ["International calorie", "", "Joule"])
-defineUnit([ 0, 2, 1,-2, 0, 0, 0, 0], ["cal15"], 4.1855, ["15 &deg;C calorie", "", "Joule"])
-defineUnit([ 0, 2, 1,-2, 0, 0, 0, 0], ["calth"], 4.1840, ["Thermochemical calorie", "", "Joule"])
-defineUnit([ 0, 2, 1,-2, 0, 0, 0, 0], ["erg", "Erg", "ergs", "Ergs"], 1E-7, ["Erg", "10^-7", "Joule"])
-defineUnit([ 0, 2, 1,-2, 0, 0, 0, 0], ["eV", "electronvolt", "Electronvolt", "ElectronVolt", "electronvolts", "Electronvolts", "ElectronVolts"], q, ["Electron Volt", "1", "q*Volt"])
-defineUnit([ 0, 2, 1,-2, 0, 0, 0, 0], ["Hr", "Hartree", "hartree"], 4*pi*Rinf*Math.pow(c*q,2)/alpha*1E-7, ["Hartree", "2", "Rydberg"])
-defineUnit([ 0, 2, 1,-2, 0, 0, 0, 0], ["J", "Joule", "joule", "Joules", "joules"], 1, ["Joule", "1", "Joule"])
-defineUnit([ 0, 2, 1,-2, 0, 0, 0, 0], ["quad", "QUAD"], 1.05505585262E18, ["Quadrillion BTU", "", "ExaJoule"])
-defineUnit([ 0, 2, 1,-2, 0, 0, 0, 0], ["Ry", "Rydberg", "rydberg", "Rydbergs", "rydbergs"], 2*pi*Rinf*Math.pow(c*q,2)/alpha*1E-7, ["Rydberg", "", "ElectronVolt"])
-defineUnit([ 0, 2, 1,-2, 0, 0, 0, 0], ["th", "Thermie", "thermie"], 4.1868E+6, ["Thermie", "10^6", "Calorie"])
-defineUnit([ 0, 2, 1,-2, 0, 0, 0, 0], ["Wh", "watthour", "Watthour", "wattHour", "WattHour"], 3.6E+3, ["Watt hour", "3600", "Joule"])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["BTU", "btu"], 1.05505585262E3, ["British Thermal Unit", "", "KiloJoule"])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["cal", "calorie", "Calorie", "calories", "Calories"], 4.1868, ["International calorie", "", "Joule"])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["cal15"], 4.1855, ["15 &deg;C calorie", "", "Joule"])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["calth"], 4.1840, ["Thermochemical calorie", "", "Joule"])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["erg", "Erg", "ergs", "Ergs"], 1E-7, ["Erg", "10^-7", "Joule"])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["eV", "electronvolt", "Electronvolt", "ElectronVolt", "electronvolts", "Electronvolts", "ElectronVolts"], q, ["Electron Volt", "1", "q*Volt"])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["Hr", "Hartree", "hartree"], 4*pi*Rinf*Math.pow(c*q,2)/alpha*1E-7, ["Hartree", "2", "Rydberg"])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["J", "Joule", "joule", "Joules", "joules"], 1, ["Joule", "1", "Joule"])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["quad", "QUAD"], 1.05505585262E18, ["Quadrillion BTU", "", "ExaJoule"])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["Ry", "Rydberg", "rydberg", "Rydbergs", "rydbergs"], 2*pi*Rinf*Math.pow(c*q,2)/alpha*1E-7, ["Rydberg", "", "ElectronVolt"])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["th", "Thermie", "thermie"], 4.1868E+6, ["Thermie", "10^6", "Calorie"])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["Wh", "watthour", "Watthour", "wattHour", "WattHour"], 3.6E+3, ["Watt hour", "3600", "Joule"])
 // Power
-defineUnit([ 0, 2, 1,-3, 0, 0, 0, 0], ["CV", "chevaux"], 75*9.80665, ["Metric horsepower", "75", "kgf m/s"])
-defineUnit([ 0, 2, 1,-3, 0, 0, 0, 0], ["hp", "horsepower"], 550*0.45359237*9.80665*1200/3937, ["Horsepower", "550", "lbf foot/sec"])
-defineUnit([ 0, 2, 1,-3, 0, 0, 0, 0], ["W", "Watt", "watt", "Watts", "watts"], 1, ["Watt", "1", "Watt"])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-3, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["CV", "chevaux"], 75*9.80665, ["Metric horsepower", "75", "kgf m/s"])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-3, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["hp", "horsepower"], 550*0.45359237*9.80665*1200/3937, ["Horsepower", "550", "lbf foot/sec"])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-3, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["W", "Watt", "watt", "Watts", "watts"], 1, ["Watt", "1", "Watt"])
 // Pressure
-defineUnit([ 0,-1, 1,-2, 0, 0, 0, 0], ["atm", "atmos", "atmosphere", "Atmosphere"], 1.01325E+5, ["Standard atmosphere", "", "KiloPascal"])
-defineUnit([ 0,-1, 1,-2, 0, 0, 0, 0], ["bar", "bars"], 1E+5, ["Bar", "100", "KiloPascal"])
-defineUnit([ 0,-1, 1,-2, 0, 0, 0, 0], ["inHg"], 133.3*100/3937*1000, ["Inch of mercury", "", "KiloPascal"])
-defineUnit([ 0,-1, 1,-2, 0, 0, 0, 0], ["mmHg"], 133.3, ["Millimeter of mercury", "133.3", "Pascal"])
-defineUnit([ 0,-1, 1,-2, 0, 0, 0, 0], ["Pa", "Pascal", "pascal"], 1, ["Pascal", "1", "Newton/m^2"])
-defineUnit([ 0,-1, 1,-2, 0, 0, 0, 0], ["psi"], 0.45359237*9.80665*1549.9969, ["Pound force per Square Inch", "1", "lbf/inch^2"])
-defineUnit([ 0,-1, 1,-2, 0, 0, 0, 0], ["Torr", "torr"], 1.01325E+5/760, ["Torr", "1/760", "Atmosphere"])
+defineUnit([ [0, 1], [-1, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["atm", "atmos", "atmosphere", "Atmosphere"], 1.01325E+5, ["Standard atmosphere", "", "KiloPascal"])
+defineUnit([ [0, 1], [-1, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["bar", "bars"], 1E+5, ["Bar", "100", "KiloPascal"])
+defineUnit([ [0, 1], [-1, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["inHg"], 133.3*100/3937*1000, ["Inch of mercury", "", "KiloPascal"])
+defineUnit([ [0, 1], [-1, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["mmHg"], 133.3, ["Millimeter of mercury", "133.3", "Pascal"])
+defineUnit([ [0, 1], [-1, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["Pa", "Pascal", "pascal"], 1, ["Pascal", "1", "Newton/m^2"])
+defineUnit([ [0, 1], [-1, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["psi"], 0.45359237*9.80665*1549.9969, ["Pound force per Square Inch", "1", "lbf/inch^2"])
+defineUnit([ [0, 1], [-1, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["Torr", "torr"], 1.01325E+5/760, ["Torr", "1/760", "Atmosphere"])
 // Viscosity
-defineUnit([ 0,-1, 1,-1, 0, 0, 0, 0], ["P", "Ps", "Po", "Poise", "poise"], 0.1, ["Poise", "0.1", "Pascal second"])
-defineUnit([ 0, 2, 0,-1, 0, 0, 0, 0], ["St", "Stokes", "stokes", "stoke"], 1E-4, ["Stokes", "1", "cm^2/s"])
+defineUnit([ [0, 1], [-1, 1], [1, 1], [-1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["P", "Ps", "Po", "Poise", "poise"], 0.1, ["Poise", "0.1", "Pascal second"])
+defineUnit([ [0, 1], [2, 1], [0, 1], [-1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["St", "Stokes", "stokes", "stoke"], 1E-4, ["Stokes", "1", "cm^2/s"])
 // Molar quantities
-defineUnit([ 0, 0, 0, 1, 1, 0, 0,-1], ["Fd", "Faraday"], Na*q, ["Faraday constant", "q*N<SUB>Avogadro</SUB>", "&nbsp;&nbsp;[&nbsp;96485 Coulomb/Mole&nbsp;]"])
-defineUnit([ 0, 0, 0,-1, 0, 0, 0, 1], ["kat", "katal"], 1, ["Katal", "1", "Mole/second"])
-defineUnit([ 0, 0, 1, 0, 0, 0, 0,-1], ["Mmol"], 0.001, ["Molar mass", "", "gram/mole"])
-defineUnit([ 0, 0, 0, 0, 0, 0, 0,-1], ["Na", "Avogadro"], Na, ["Avogadro number", "", ""])
-defineUnit([ 0, 3, 0, 0, 0, 0, 0,-1], ["Vmol"], 0.0224141, ["Molar volume", "", "liter/mole"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [1, 1], [1, 1], [0, 1], [0, 1], [-1, 1]], ["Fd", "Faraday"], Na*q, ["Faraday constant", "q*N<SUB>Avogadro</SUB>", "&nbsp;&nbsp;[&nbsp;96485 Coulomb/Mole&nbsp;]"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [-1, 1], [0, 1], [0, 1], [0, 1], [1, 1]], ["kat", "katal"], 1, ["Katal", "1", "Mole/second"])
+defineUnit([ [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [-1, 1]], ["Mmol"], 0.001, ["Molar mass", "", "gram/mole"])
+defineUnit([ [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [-1, 1]], ["Na", "Avogadro"], Na, ["Avogadro number", "", ""])
+defineUnit([ [0, 1], [3, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [-1, 1]], ["Vmol"], 0.0224141, ["Molar volume", "", "liter/mole"])
 // Physics
-defineUnit([ 0, 3, 1,-2, 0, 0, 0, 0], ["e2"], Math.pow(c*q,2)*1E-7, ["quantity q^2/(4*Pi*eps0)", "1", "Hartree * a0"])
-defineUnit([ 0,-3,-1, 4, 2, 0, 0, 0], ["eps0"], 1/(4*pi*Math.pow(c,2))*1E+7, ["Vacuum permittivity", "", "Coulomb/(Volt meter)"])
-defineUnit([ 0, 1, 0,-2, 0, 0, 0, 0], ["gN"], 9.80665, ["Terrestrial acceleration", "", ""])
-defineUnit([ 0, 3,-1,-2, 0, 0, 0, 0], ["GN"], GN, ["Constant of gravitation", "", "Newton m^2/kg^2"])
-defineUnit([ 0, 2, 1,-1, 0, 0, 0, 0], ["h"], h, ["Planck constant", "", "Joule second"])
-defineUnit([ 0, 2, 1,-1, 0, 0, 0, 0], ["hbar"], h/(2*pi), ["Dirac constant", "h/(2*Pi)", "&nbsp;&nbsp;[&nbsp;1.0546 * 10^-34 Joule second&nbsp;]"])
-defineUnit([ 0, 2, 1,-2, 0,-1, 0, 0], ["k", "kB"], R/Na, ["Boltzmann constant", "R/Na", "&nbsp;&nbsp;[&nbsp;1.3807 * 10^-23 J/K&nbsp;]"])
-defineUnit([ 0, 1, 1,-2,-2, 0, 0, 0], ["mu0"], 4*pi*1E-7, ["Vacuum permeability", "4 * Pi * 10^-7", "Tesla meter/Ampere"])
-defineUnit([ 0, 2, 0, 0, 1, 0, 0, 0], ["muB"], q*h/(4*pi*me), ["Bohr magneton", "q*h/(4*Pi*m<sub>electron</sub>)", "&nbsp;&nbsp;[&nbsp;9.2740 * 10^-24 A m^2&nbsp;]"])
-defineUnit([ 0, 2, 0, 0, 1, 0, 0, 0], ["mue"], mue, ["Electron magnetic moment", "", "muB"])
-defineUnit([ 0, 2, 0, 0, 1, 0, 0, 0], ["mumu"], mumu, ["Muon magnetic moment", "", "muN"])
-defineUnit([ 0, 2, 0, 0, 1, 0, 0, 0], ["mun"], mun, ["Neutron magnetic moment", "", "muN"])
-defineUnit([ 0, 2, 0, 0, 1, 0, 0, 0], ["muN"], q*h/(4*pi*mp), ["Nuclear magneton", "q*h/(4*Pi*m<sub>proton</sub>)", "&nbsp;&nbsp;[&nbsp;5.0508 * 10^-27 A m^2&nbsp;]"])
-defineUnit([ 0, 2, 0, 0, 1, 0, 0, 0], ["mup"], mup, ["Proton magnetic moment", "", "muN"])
-defineUnit([ 0,-3, 0, 0, 0, 0, 0, 0], ["n0"], Na/0.0224141, ["Loschmidt constant", "", ""])
-defineUnit([ 0, 2, 1,-2,-1, 0, 0, 0], ["phi0", "Phi0"], h/(2*q), ["Quantum of magnetic flux", "h/(2*q)", "&nbsp;&nbsp;[&nbsp;2.0678 * 10^-15 Tesla m^2&nbsp;]"])
-defineUnit([ 0, 2, 1,-2, 0,-1, 0,-1], ["R"], R, ["Molar gaz constant", "", "Joule/Mole/Kelvin"])
-defineUnit([ 0, 0, 1,-3, 0,-4, 0, 0], ["sigma"], 2/15*pi*Math.pow(pi*R/Na/h,4)*h/c/c, ["Stefan-Boltzmann constant", "", "Watt/(m^2 K^4)"])
+defineUnit([ [0, 1], [3, 1], [1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["e2"], Math.pow(c*q,2)*1E-7, ["quantity q^2/(4*Pi*eps0)", "1", "Hartree * a0"])
+defineUnit([ [0, 1], [-3, 1], [-1, 1], [4, 1], [2, 1], [0, 1], [0, 1], [0, 1]], ["eps0"], 1/(4*pi*Math.pow(c,2))*1E+7, ["Vacuum permittivity", "", "Coulomb/(Volt meter)"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["gN"], 9.80665, ["Terrestrial acceleration", "", ""])
+defineUnit([ [0, 1], [3, 1], [-1, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["GN"], GN, ["Constant of gravitation", "", "Newton m^2/kg^2"])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["h"], h, ["Planck constant", "", "Joule second"])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-1, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["hbar"], h/(2*pi), ["Dirac constant", "h/(2*Pi)", "&nbsp;&nbsp;[&nbsp;1.0546 * 10^-34 Joule second&nbsp;]"])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-2, 1], [0, 1], [-1, 1], [0, 1], [0, 1]], ["k", "kB"], R/Na, ["Boltzmann constant", "R/Na", "&nbsp;&nbsp;[&nbsp;1.3807 * 10^-23 J/K&nbsp;]"])
+defineUnit([ [0, 1], [1, 1], [1, 1], [-2, 1], [-2, 1], [0, 1], [0, 1], [0, 1]], ["mu0"], 4*pi*1E-7, ["Vacuum permeability", "4 * Pi * 10^-7", "Tesla meter/Ampere"])
+defineUnit([ [0, 1], [2, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1]], ["muB"], q*h/(4*pi*me), ["Bohr magneton", "q*h/(4*Pi*m<sub>electron</sub>)", "&nbsp;&nbsp;[&nbsp;9.2740 * 10^-24 A m^2&nbsp;]"])
+defineUnit([ [0, 1], [2, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1]], ["mue"], mue, ["Electron magnetic moment", "", "muB"])
+defineUnit([ [0, 1], [2, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1]], ["mumu"], mumu, ["Muon magnetic moment", "", "muN"])
+defineUnit([ [0, 1], [2, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1]], ["mun"], mun, ["Neutron magnetic moment", "", "muN"])
+defineUnit([ [0, 1], [2, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1]], ["muN"], q*h/(4*pi*mp), ["Nuclear magneton", "q*h/(4*Pi*m<sub>proton</sub>)", "&nbsp;&nbsp;[&nbsp;5.0508 * 10^-27 A m^2&nbsp;]"])
+defineUnit([ [0, 1], [2, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1]], ["mup"], mup, ["Proton magnetic moment", "", "muN"])
+defineUnit([ [0, 1], [-3, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["n0"], Na/0.0224141, ["Loschmidt constant", "", ""])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-2, 1], [-1, 1], [0, 1], [0, 1], [0, 1]], ["phi0", "Phi0"], h/(2*q), ["Quantum of magnetic flux", "h/(2*q)", "&nbsp;&nbsp;[&nbsp;2.0678 * 10^-15 Tesla m^2&nbsp;]"])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-2, 1], [0, 1], [-1, 1], [0, 1], [-1, 1]], ["R"], R, ["Molar gaz constant", "", "Joule/Mole/Kelvin"])
+defineUnit([ [0, 1], [0, 1], [1, 1], [-3, 1], [0, 1], [-4, 1], [0, 1], [0, 1]], ["sigma"], 2/15*pi*Math.pow(pi*R/Na/h,4)*h/c/c, ["Stefan-Boltzmann constant", "", "Watt/(m^2 K^4)"])
 // Electricity
-defineUnit([ 0, 1, 0, 1, 1, 0, 0, 0], ["D", "Debye", "debye"], 0.001/c*1e-18, ["Debye", "10^-18", "statcoulomb cm"])
-defineUnit([ 0,-2,-1, 4, 2, 0, 0, 0], ["F", "Farad", "farad", "Farads", "farads"], 1, ["Farad", "1", "Coulomb/Volt"])
-defineUnit([ 0, 2, 1,-2,-2, 0, 0, 0], ["H", "Henry", "henry"], 1, ["Henry", "1", "Weber/Ampere"])
-defineUnit([ 0, 2, 1,-3,-2, 0, 0, 0], ["Ohm", "ohm", "Ohms", "ohms"], 1, ["Ohm", "1", "Volt/Ampere"])
-defineUnit([ 0, 2, 1,-3,-2, 0, 0, 0], ["RH"], h/Math.pow(q,2), ["Hall resistance", "h/q^2", "&nbsp;&nbsp;[&nbsp;25.813 KiloOhm&nbsp;]"])
-defineUnit([ 0,-2,-1, 3, 2, 0, 0, 0], ["S", "Siemens", "siemens"], 1, ["Siemens", "1", "Ohm^-1"])
-defineUnit([ 0, 2, 1,-3,-1, 0, 0, 0], ["V", "Volt", "volt", "Volts", "volts"], 1, ["Volt", "1", "Joule/Coulomb"])
+defineUnit([ [0, 1], [1, 1], [0, 1], [1, 1], [1, 1], [0, 1], [0, 1], [0, 1]], ["D", "Debye", "debye"], 0.001/c*1e-18, ["Debye", "10^-18", "statcoulomb cm"])
+defineUnit([ [0, 1], [-2, 1], [-1, 1], [4, 1], [2, 1], [0, 1], [0, 1], [0, 1]], ["F", "Farad", "farad", "Farads", "farads"], 1, ["Farad", "1", "Coulomb/Volt"])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-2, 1], [-2, 1], [0, 1], [0, 1], [0, 1]], ["H", "Henry", "henry"], 1, ["Henry", "1", "Weber/Ampere"])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-3, 1], [-2, 1], [0, 1], [0, 1], [0, 1]], ["Ohm", "ohm", "Ohms", "ohms"], 1, ["Ohm", "1", "Volt/Ampere"])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-3, 1], [-2, 1], [0, 1], [0, 1], [0, 1]], ["RH"], h/Math.pow(q,2), ["Hall resistance", "h/q^2", "&nbsp;&nbsp;[&nbsp;25.813 KiloOhm&nbsp;]"])
+defineUnit([ [0, 1], [-2, 1], [-1, 1], [3, 1], [2, 1], [0, 1], [0, 1], [0, 1]], ["S", "Siemens", "siemens"], 1, ["Siemens", "1", "Ohm^-1"])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-3, 1], [-1, 1], [0, 1], [0, 1], [0, 1]], ["V", "Volt", "volt", "Volts", "volts"], 1, ["Volt", "1", "Joule/Coulomb"])
 // Magnetism
-defineUnit([ 0, 0, 1,-2,-1, 0, 0, 0], ["G", "Gs", "Gauss", "gauss"], 1E-4, ["Gauss", "10^-4", "Tesla"])
-defineUnit([ 0, 2, 1,-2,-1, 0, 0, 0], ["Mx", "Maxwell", "maxwell"], 1E-8, ["Maxwell", "10^-8", "Weber"])
-defineUnit([ 0,-1, 0, 0, 1, 0, 0, 0], ["Oe", "Oersted", "oersted"], 1/(4*pi)*1E+3, ["Oersted", "1", "Gilbert/cm"])
-defineUnit([ 0, 0, 1,-2,-1, 0, 0, 0], ["T", "Tesla", "tesla", "Teslas", "teslas"], 1, ["Tesla", "1", "Newton/Ampere/meter"])
-defineUnit([ 0, 2, 1,-2,-1, 0, 0, 0], ["Wb", "Weber", "weber", "Webers", "webers"], 1, ["Weber", "1", "Tesla m^2"])
+defineUnit([ [0, 1], [0, 1], [1, 1], [-2, 1], [-1, 1], [0, 1], [0, 1], [0, 1]], ["G", "Gs", "Gauss", "gauss"], 1E-4, ["Gauss", "10^-4", "Tesla"])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-2, 1], [-1, 1], [0, 1], [0, 1], [0, 1]], ["Mx", "Maxwell", "maxwell"], 1E-8, ["Maxwell", "10^-8", "Weber"])
+defineUnit([ [0, 1], [-1, 1], [0, 1], [0, 1], [1, 1], [0, 1], [0, 1], [0, 1]], ["Oe", "Oersted", "oersted"], 1/(4*pi)*1E+3, ["Oersted", "1", "Gilbert/cm"])
+defineUnit([ [0, 1], [0, 1], [1, 1], [-2, 1], [-1, 1], [0, 1], [0, 1], [0, 1]], ["T", "Tesla", "tesla", "Teslas", "teslas"], 1, ["Tesla", "1", "Newton/Ampere/meter"])
+defineUnit([ [0, 1], [2, 1], [1, 1], [-2, 1], [-1, 1], [0, 1], [0, 1], [0, 1]], ["Wb", "Weber", "weber", "Webers", "webers"], 1, ["Weber", "1", "Tesla m^2"])
 // Radioactivity
-defineUnit([ 0, 2, 0,-2, 0, 0, 0, 0], ["Gy", "Gray", "gray", "Grays", "grays"], 1, ["Gray", "1", "Joule/kg"])
-defineUnit([ 0, 2, 0,-2, 0, 0, 0, 0], ["rd"], 1E-2, ["Rad", "0.01", "Joule/kg"])
-defineUnit([ 0, 0,-1, 1, 1, 0, 0, 0], ["Ro", "Roentgen", "roentgen"], 2.58E-4, ["Rontgen", "258", "MicroCoulomb/kg"])
+defineUnit([ [0, 1], [2, 1], [0, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["Gy", "Gray", "gray", "Grays", "grays"], 1, ["Gray", "1", "Joule/kg"])
+defineUnit([ [0, 1], [2, 1], [0, 1], [-2, 1], [0, 1], [0, 1], [0, 1], [0, 1]], ["rd"], 1E-2, ["Rad", "0.01", "Joule/kg"])
+defineUnit([ [0, 1], [0, 1], [-1, 1], [1, 1], [1, 1], [0, 1], [0, 1], [0, 1]], ["Ro", "Roentgen", "roentgen"], 2.58E-4, ["Rontgen", "258", "MicroCoulomb/kg"])
 
 //
 //  Definition of the prefixes
@@ -486,7 +486,6 @@ function setCookie() {
 	d.setTime(d.getTime() + (365*24*60*60*1000)); // Store the cookies for 1 year
 	var expires = "expires=" + d.toUTCString();
 	var path = "path=/";
-	// var domain = "domain=" + "mafalda.unige.ch";
 	
 	if (document.cookie.length == 0) {
 		if (document.getElementById("unitfrom_id").value != "") { // Empty unit is not allowed in the drop down menu
@@ -815,6 +814,86 @@ function UpdateMol(form)
 /////////////////////////////////////////////////////////////////////////
 
 //
+//  Fraction manipulation
+//  *******************
+//
+
+function gcd(exp) {
+// The parameter of the function should be a list of 2 integer [a, b],
+// it returns the gcd of the 2 numbers
+	var a = Math.abs(exp[0]);
+	var b = Math.abs(exp[1]);
+	
+	if (a == 0) {
+		return Math.abs(b);
+	}
+	if (b == 0) {
+		return Math.abs(a);
+	}
+	
+	do {
+		if (a > b) {
+			a = a - b;
+		}
+		else {
+			b = b - a;
+		}
+	} while (a != b);
+	
+	gcd = a;
+	return gcd;
+}
+
+function irreductibleFraction(exp) {
+// The parameter of the function should be a list of 2 integer [a, b],
+// function returns the irreductible fraction of exp as a list of two integers [c, d]
+	var gcd = gcd(exp);
+	var a = exp[0];
+	var b = exp[1];
+	if ((a < 0) && (b < 0)) {
+		a = Math.abs(a / gcd);
+		b = Math.abs(b / gcd);
+		var irreductibleFraction = [a, b];
+		return irreductibleFraction;
+	}
+	else if ((a < 0) && (b > 0)) {
+		a = a / gcd;
+		b = b / gcd;
+		var irreductibleFraction = [a, b];
+		return irreductibleFraction;
+	}
+	else if ((a > 0) && (b < 0)) {
+		a = -a / gcd;
+		b = Math.abs(b / gcd);
+		var irreductibleFraction = [a, b];
+		return irreductibleFraction;
+	}
+	else if ((a > 0) && (b > 0)) {
+		a = a / gcd;
+		b = b / gcd;
+		var irreductibleFraction = [a, b];
+		return irreductibleFraction;
+	}
+	
+}
+
+function additionFraction(exp1, exp2) {
+// The parameter of the function should be 2 lists of 2 integer [a1, b1] and [a2, b2],
+// function returns the result of addition a1/b1 + a2/b2 as a list [numerator, denominator]
+
+	var a1 = exp1[0];
+	var b1 = exp1[1];
+	var a2 = exp2[0];
+	var b2 = exp2[1];
+	var numerator = a1*b2 + a2*b1;
+	var denominator = b1*b2;
+	
+	var resultAddition = [numerator, denominator];
+	return resultAddtion;
+
+}
+
+//
 //  String manipulation
 //  *******************
 //
@@ -902,6 +981,7 @@ function power(s,n)
   }
   return s.substring(0,s.length-1)
 }
+
 
 //
 //  Parsing units
@@ -1090,13 +1170,13 @@ function Validate(form,forwhom)
   return true
 }
 
-function ToSystem(u,system)
+function ToSystem(u,system) 
 // Returns the string expression of the unit u[] in a given system of units
 {
   var s="";var k=0
   for(var i=0;i<8;i++)
   {
-    k=0;for(var n=0;n<u.length-1;n++){k+=u[n][2]*unit[u[n][1]][1][i]}
+    k=0;for(var n=0;n<u.length-1;n++){k+=u[n][2]*unit[u[n][1]][1][i][0]}
     if(k!=0){s+=" "+system[i];if(k>1||k<0){s+="^"+k}}
   }
   s=s.substring(1,s.length)
